@@ -1,0 +1,133 @@
+%\documentclass[conference]{IEEEtran}
+\documentclass[draftclsnofoot,journal,onecolumn,12pt]{IEEEtran}
+
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[bookmarks=true,pdfstartview=FitH]{hyperref}
+\usepackage{bookmark}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage[caption=false]{subfig}
+\usepackage{url}
+\usepackage{threeparttable}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+
+\title{Open Source Software Development Process}
+
+\author{\IEEEauthorblockN{Yongsen MA} \\
+\IEEEauthorblockA{Shanghai Jiao Tong University \\
+E-mail: mayongsen@gmail.com}
+}
+
+% make the title area
+\maketitle
+%
+%\begin{abstract}
+%%\boldmath
+%The abstract goes here.
+%\end{abstract}
+
+
+\section{Statement of Purpose}
+I want a detailed description of the process. For example, how are crash reports handled? How are bug reports handled? How are bugs classified and confirmed? How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
+
+\href{http://www.ted.com/talks/aaron_koblin.html}{Aaron Koblin: Artfully visualizing our humanity}
+
+\section{Research Questions}
+
+\subsection{motivating, joining, participating and contributing}
+
+\begin{enumerate}
+  \item acquire: knowledge, experience, opportunities; backup, platform
+  \item participate: happiness, communication
+  \item contribute: freedom, trustworthy
+\end{enumerate}
+
+\begin{enumerate}
+  \item developer
+  \item user(evaluation)
+\end{enumerate}
+
+\begin{enumerate}
+  \item public
+  \item private
+\end{enumerate}
+
+\subsection{modeling, examination, investigation}
+
+\begin{enumerate}
+  \item individuals
+  \item groups
+  \item organizations
+\end{enumerate}
+
+\begin{enumerate}
+  \item operate systems
+  \item web
+  \item application
+  \item network
+\end{enumerate}
+
+\begin{enumerate}
+  \item contribute:
+  \item process: stable, scalable
+  \item acquire: software, individuals, groups
+\end{enumerate}
+
+\begin{enumerate}
+  \item graph theory
+  \item multiproject
+  \item interdependent
+\end{enumerate}
+
+\section{Literature Review}
+Say how other scholars have tried to answer the questions that you mention above. The literature review must be
+relevant to the questions you are asking. For example, if you want to know how women's lives have changed as
+a result of starting a business in China, you do not need to review all the literature on China's political and
+economic reforms. Instead, you want to locate the literature on how women's lives are affected by the
+development of market economies.
+
+\section{Statement of Significance}
+Think about the overall implications of your work. Look beyond how undertaking the degree will help you
+personally. PhD or MPhil theses may have several implications. Consider the following:
+\begin{enumerate}
+  \item They may contribute to a body of academic literature. They may, for instance, advance a neglected theoretical
+position.
+  \item They may have practical or policy implications. For example, they may change the way that a certain group
+of people practice their occupation, handle their clients or deal with their work.
+  \item They may make a political statement or a cultural critic. They may point to an injustice, an inequality, or a
+contradiction.
+\end{enumerate}
+
+But be realistic. It is not realistic to claim that your work will, say, transform the educational system in Hong
+Kong. It may be realistic, however, to say that your thesis will help explain why students often fail to live up to
+teachers' expectations.
+
+\section{Research Methodology}
+Research methodology concerns the manner by which data are collected. Documentation, observation, in-depth
+interview, survey, and statistical data are the main methods of data collection in the social sciences.
+
+Your methodology must be  appropriate  to the questions you are asking. That is, you must show how the
+methods you use will answer the questions you are asking. If you want to study recreational drug use in Hong
+Kong, for example, it would not be appropriate to study only youth in your housing estate who do not take drugs.
+
+Further, your methodology must be feasible. A proposal to interview workers from 500 factories in Shenzhen is
+not feasible--in the time that you have to complete the degree. It may, however, be feasible to interview workers
+from ten factories, or obtain production statistics from 500 enterprises.
+
+Finally, your methodology must be detailed. For example, if you plan to do a survey, how many people do you
+plan to include in your sample? And how will you decide which people to sample?
+%
+\nocite{*}
+
+\renewcommand\refname{References}
+\bibliographystyle{abbrv}
+%\IEEEtriggeratref{6}
+\bibliography{open}
+%%\printbibliography
+
+\end{document}
