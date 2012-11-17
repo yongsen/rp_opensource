@@ -1,28 +1,14 @@
-\begin{thebibliography}{10}
-
-\bibitem{Bazilian2012149}
-M.~Bazilian, A.~Rice, J.~Rotich, M.~Howells, J.~DeCarolis, S.~Macmillan,
-  C.~Brooks, F.~Bauer, and M.~Liebreich.
-\newblock Open source software and crowdsourcing for energy analysis.
-\newblock {\em Energy Policy}, 49(0):149 -- 153, 2012.
+\begin{thebibliography}{1}
 
 \bibitem{Bonaccorsi20031243}
 A.~Bonaccorsi and C.~Rossi.
 \newblock Why open source software can succeed.
 \newblock {\em Research Policy}, 32(7):1243 -- 1258, 2003.
 
-\bibitem{Crowston06informationsystems}
-K.~Crowston and H.~Annabi.
-\newblock Information systems success in free and open source software
-  development: Theory and measures.
-\newblock In {\em Software Process: Improvement and Practice}, pages 123--148,
-  2006.
-
-\bibitem{Glassman2012673}
-M.~Glassman and M.~J. Kang.
-\newblock Intelligence in the internet age: The emergence and evolution of open
-  source intelligence (osint).
-\newblock {\em Computers in Human Behavior}, 28(2):673 -- 682, 2012.
+\bibitem{chacon2009pro}
+S.~Chacon, J.~Hamano, and S.~Pearce.
+\newblock {\em Pro Git}, volume 288.
+\newblock Apress, 2009.
 
 \bibitem{Hertel20031159}
 G.~Hertel, S.~Niedner, and S.~Herrmann.
@@ -30,15 +16,15 @@ G.~Hertel, S.~Niedner, and S.~Herrmann.
   internet-based survey of contributors to the linux kernel.
 \newblock {\em Research Policy}, 32(7):1159 -- 1177, 2003.
 
+\bibitem{kernighan1999practice}
+B.~Kernighan and R.~Pike.
+\newblock {\em The practice of programming}.
+\newblock Addison-Wesley Professional, 1999.
+
 \bibitem{Kogut01062001}
 B.~Kogut and A.~Metiu.
 \newblock Open‐source software development and distributed innovation.
 \newblock {\em Oxford Review of Economic Policy}, 17(2):248--264, 2001.
-
-\bibitem{prehn2007open}
-S.~Prehn.
-\newblock Open source software development process.
-\newblock {\em Term Paper July}, 29:2007, 2007.
 
 \bibitem{scacchi2006understanding}
 W.~Scacchi, J.~Feller, B.~Fitzgerald, S.~Hissam, and K.~Lakhani.
@@ -51,12 +37,6 @@ G.~von Krogh and E.~von Hippel.
 \newblock Special issue on open source software development.
 \newblock {\em Research Policy}, 32(7):1149 -- 1157, 2003.
 
-\bibitem{Wang2012352}
-J.~Wang.
-\newblock Survival factors for free open source software projects: A
-  multi-stage perspective.
-\newblock {\em European Management Journal}, 30(4):352 -- 371, 2012.
-
 \bibitem{Yilmaz06techniquesand}
 C.~Yilmaz, A.~M. Memon, A.~Porter, A.~S. Krishna, D.~C. Schmidt, and
   A.~Gokhale.
@@ -64,11 +44,5 @@ C.~Yilmaz, A.~M. Memon, A.~Porter, A.~S. Krishna, D.~C. Schmidt, and
   open-source software.
 \newblock In {\em Software Process: Improvement and Practice}. John Wiley \&
   Sons, 2006.
-
-\bibitem{CambridgeJournals:957960}
-M.~Zschoch.
-\newblock The success of open source.
-\newblock {\em Canadian Journal of Political Science/Revue canadienne de
-  science politique}, 40(01):250--252, 2007.
 
 \end{thebibliography}

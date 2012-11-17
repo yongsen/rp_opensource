@@ -10,6 +10,7 @@
 \usepackage[caption=false]{subfig}
 \usepackage{url}
 \usepackage{threeparttable}
+\usepackage{listings}
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -31,15 +32,11 @@ E-mail: mayongsen@gmail.com}
 %The abstract goes here.
 %\end{abstract}
 
-
-\section{Statement of Purpose}
-I want a detailed description of the process. For example, how are crash reports handled? How are bug reports handled? How are bugs classified and confirmed? How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
+\section{Introduction}
 
 \href{http://www.ted.com/talks/aaron_koblin.html}{Aaron Koblin: Artfully visualizing our humanity}
 
 \href{http://www.mpt.net.nz/2012/06/why-free-software-has-poor-usability/}{Why free software has poor usability, and how to improve it}
-
-\section{Introduction}
 
 \subsection{motivating, joining, participating and contributing}
 
@@ -86,12 +83,9 @@ I want a detailed description of the process. For example, how are crash reports
   \item interdependent
 \end{enumerate}
 
-\section{Maintaining}
-
-How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
+\section{Open Source Project}
 
 \subsection{Components}
-
 \begin{enumerate}
   \item Home Page
   \item Code Repository
@@ -100,8 +94,7 @@ How are the assignments to individual developers made? How to merge code changes
   \item Wiki
 \end{enumerate}
 
-\subsection{Participate}
-
+\subsection{Participating}
 \begin{enumerate}
   \item Starting
   \item Discussion
@@ -110,7 +103,7 @@ How are the assignments to individual developers made? How to merge code changes
     \item Take part in News Group
     \item Participate in Conference
   \end{itemize}
-  \item Programming
+  \item \textbf{Programming and Debugging}
   \begin{itemize}
     \item Consummate documents
     \item Running test codes
@@ -120,8 +113,25 @@ How are the assignments to individual developers made? How to merge code changes
   \item Improving
 \end{enumerate}
 
-\subsection{Git and ath9k}
-
+\subsection{Developing}
+\begin{enumerate}
+  \item Creating a Repository
+  \item Making Changes
+  \begin{itemize}
+    \item Adding Files
+    \item Committing Changes
+    \item Files Status and Differences
+    \item Managing Files
+  \end{itemize}
+  \item \textbf{Managing Branches}
+  \begin{itemize}
+    \item Creating Branches
+    \item Merging Branches
+    \item Handling Conflicts
+    \item Deleting and renaming branches
+\end{itemize}
+  \item Handling Releases
+\end{enumerate}
 
 \section{Debugging}
 
@@ -131,9 +141,103 @@ For example, how are crash reports handled? How are bug reports handled? How are
 
 \subsection{Functional Debugging}
 
-\section{Improvement}
+\section{Branching}
 
-\nocite{*}
+How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
+
+\subsection{Branching}
+
+\begin{itemize}
+\item Creating Branching
+\begin{verbatim}
+  git branch new
+\end{verbatim}
+  \begin{enumerate}
+    \item Test Changing
+    \item Add new functionality
+    \item Fix bugs
+  \end{enumerate}
+\item Merging Branching
+  \begin{enumerate}
+    \item straight merge
+    \item squashed commits
+    \item cherry picking
+  \end{enumerate}
+\item Handling Conflicts
+  \begin{enumerate}
+    \item Manual
+    \item Tools
+    \begin{verbatim}
+      git mergetool
+\end{verbatim}
+  \end{enumerate}
+\item Deleting and renaming branches
+\end{itemize}
+
+Local Use Cases  
+\begin{itemize}
+  \item Pulling Updates
+  \item Making Patches
+  \begin{enumerate}
+    \item Test Changing
+    \item Add new functionality
+    \item Fix bugs
+  \end{enumerate}
+  \item Merging Patches
+  \begin{enumerate}
+    \item straight merge
+    \item squashed commits
+    \item cherry picking
+  \end{enumerate}
+  \item Finding a Commit
+  \item Cherry Picking
+  \item Reverting a Commit
+  \item Resolving Merges
+  \item Rebasing Local Changes
+\end{itemize}
+
+\subsection{Sending Changes Upstream}
+\begin{itemize}
+  \item Generate and send patches via email
+  \begin{itemize}
+    \item Most developers send patches to a maintainer or list
+    \item Highly visible public review of patches on mail list
+  \end{itemize}
+\item Maintainer pulls updates from a downstream developer
+\begin{itemize}
+  \item Maintainer can directly pull from your published repository
+  \item Initiated by upstream maintainer
+\end{itemize}
+  \item Developer pushes updates to an upstream maintainer
+  \begin{itemize}
+  \item Some developers have write permissions on an upstream repository
+  \item Initiated by downstream developer
+\end{itemize}
+\end{itemize}
+
+\subsection{Merging}
+Merge: Combine directory and file contents from separate sources to yield
+one combined result.
+\begin{itemize}
+  \item Sources for merges are local branches
+  \item Merges always occur in the current, checked-out branch
+  \item A complete merge ends with a new commit
+\end{itemize}
+
+Git uses several merge heuristics:
+\begin{itemize}
+  \item Several merge strategies: resolve, recursive, octopus, ours
+  \item Techniques: fastforward, threeway
+\end{itemize}
+
+\nocite{Bonaccorsi20031243}
+\nocite{chacon2009pro}
+\nocite{Hertel20031159}
+\nocite{kernighan1999practice}
+\nocite{Kogut01062001}
+\nocite{scacchi2006understanding}
+\nocite{vonKrogh20031149}
+\nocite{Yilmaz06techniquesand}
 
 \renewcommand\refname{References}
 \bibliographystyle{abbrv}
