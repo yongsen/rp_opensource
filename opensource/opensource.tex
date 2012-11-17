@@ -133,7 +133,7 @@ E-mail: mayongsen@gmail.com}
   \item Handling Releases
 \end{enumerate}
 
-\section{Debugging}
+\section{Programming and Debugging}
 
 For example, how are crash reports handled? How are bug reports handled? How are bugs classified and confirmed?
 
@@ -141,61 +141,84 @@ For example, how are crash reports handled? How are bug reports handled? How are
 
 \subsection{Functional Debugging}
 
-\section{Branching}
+\section{Maintaining and Branching}
 
 How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
 
 \subsection{Branching}
+Branching means you diverge from the main line of development and continue to do work without messing with that main line. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast.
 
-\begin{itemize}
-\item Creating Branching
+A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. As you initially make commits, you’re given a master branch that points to the last commit you made. Every time you commit, it moves forward automatically.
+
+\begin{enumerate}
+\item \textbf{Creating Branching:} To create a branch and switch to it at the same time, you can run:
 \begin{verbatim}
-  git branch new
+  git checkout -b example
 \end{verbatim}
-  \begin{enumerate}
+Then you can do the following work in the branch:
+  \begin{itemize}
     \item Test Changing
     \item Add new functionality
     \item Fix bugs
-  \end{enumerate}
-\item Merging Branching
-  \begin{enumerate}
+  \end{itemize}
+At this stage, you’ll receive a call that another issue is critical and you need a hotfix. You’ll do the following:
+\begin{enumerate}
+  \item Revert back to your production branch.
+  \item Create a branch to add the hotfix.
+  \item After it’s tested, merge the hotfix branch, and push to production.
+  \item Switch back to your original story and continue working.
+\end{enumerate}
+\item \textbf{Merging Branching:} Combine directory and file contents from separate sources to yield one combined result. Suppose you’ve decided that your issue is complete and ready to be merged into your master branch. All you have to do is check out the branch you wish to merge into and then run the git merge command:
+\begin{verbatim}
+  git checkout master
+  git merge example
+\end{verbatim}
+
+\begin{itemize}
+  \item Sources for merges are local branches
+  \item Merges always occur in the current, checked-out branch
+  \item A complete merge ends with a new commit
+\end{itemize}
+
+Merge heuristics:
+\begin{itemize}
+  \item Several merge strategies: resolve, recursive, octopus, ours
+  \item Techniques: fastforward, threeway
+\end{itemize}
+
+Merge types
+  \begin{itemize}
     \item straight merge
     \item squashed commits
     \item cherry picking
-  \end{enumerate}
-\item Handling Conflicts
+  \end{itemize}
+\item \textbf{Handling Conflicts:} Occasionally, this process doesn’t go smoothly. If you changed the same part of the same file differently in the two branches you’re merging together, Git won’t be able to merge them cleanly. You’ll get a merge conflict information.
+    It has paused the process while you resolve the conflict. If you want to see which files are unmerged at any point after a merge conflict, you can run git status:
+    \begin{verbatim}
+      git status
+    \end{verbatim}
+  You can handle this conflict by manual or other tools.  
   \begin{enumerate}
-    \item Manual
-    \item Tools
+    \item Manual: Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts.
+    \item Tools: If you want to use a graphical tool to resolve these issues, you can run git mergetool, which fires up an appropriate visual merge tool and walks you through the conflicts:
     \begin{verbatim}
       git mergetool
+    \end{verbatim}
+  \end{enumerate}
+\item \textbf{Deleting and renaming branches:} Now that your work is merged in, you have no further need for the example branch. You can delete it and then manually close the ticket in your tracking system:
+\begin{verbatim}
+  git branch -d example
 \end{verbatim}
-  \end{enumerate}
-\item Deleting and renaming branches
-\end{itemize}
+\end{enumerate}
 
-Local Use Cases  
-\begin{itemize}
-  \item Pulling Updates
-  \item Making Patches
-  \begin{enumerate}
-    \item Test Changing
-    \item Add new functionality
-    \item Fix bugs
-  \end{enumerate}
-  \item Merging Patches
-  \begin{enumerate}
-    \item straight merge
-    \item squashed commits
-    \item cherry picking
-  \end{enumerate}
-  \item Finding a Commit
-  \item Cherry Picking
-  \item Reverting a Commit
-  \item Resolving Merges
-  \item Rebasing Local Changes
-\end{itemize}
-
+\subsection{Other Issues}
+\begin{enumerate}
+  \item \textbf{Pushing:} When you want to share a branch with the world, you need to push it up to a remote that you have write access to. Your local branches aren’t automatically synchronized to the remotes you write to — you have to explicitly push the branches you want to share. That way, you can use private branches for work you don’t want to share, and push up only the topic branches you want to collaborate on.
+  \item \textbf{Tracking:} Checking out a local branch from a remote branch automatically creates what is called a tracking branch. Tracking branches are local branches that have a direct relationship to a remote branch. If you’re on a tracking branch and type git push, Git automatically knows which server and branch to push to. Also, running git pull while on one of these branches fetches all the remote references and then automatically merges in the corresponding remote branch.
+  \item \textbf{Rebasing:} In Git, there are two main ways to integrate changes from one branch into another: the merge and the rebase.
+\end{enumerate}
+
+
 \subsection{Sending Changes Upstream}
 \begin{itemize}
   \item Generate and send patches via email
@@ -215,20 +238,6 @@ Local Use Cases
 \end{itemize}
 \end{itemize}
 
-\subsection{Merging}
-Merge: Combine directory and file contents from separate sources to yield
-one combined result.
-\begin{itemize}
-  \item Sources for merges are local branches
-  \item Merges always occur in the current, checked-out branch
-  \item A complete merge ends with a new commit
-\end{itemize}
-
-Git uses several merge heuristics:
-\begin{itemize}
-  \item Several merge strategies: resolve, recursive, octopus, ours
-  \item Techniques: fastforward, threeway
-\end{itemize}
 
 \nocite{Bonaccorsi20031243}
 \nocite{chacon2009pro}

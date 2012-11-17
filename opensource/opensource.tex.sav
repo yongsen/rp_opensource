@@ -10,6 +10,7 @@
 \usepackage[caption=false]{subfig}
 \usepackage{url}
 \usepackage{threeparttable}
+\usepackage{listings}
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -31,13 +32,11 @@ E-mail: mayongsen@gmail.com}
 %The abstract goes here.
 %\end{abstract}
 
-
-\section{Statement of Purpose}
-I want a detailed description of the process. For example, how are crash reports handled? How are bug reports handled? How are bugs classified and confirmed? How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
+\section{Introduction}
 
 \href{http://www.ted.com/talks/aaron_koblin.html}{Aaron Koblin: Artfully visualizing our humanity}
 
-\section{Research Questions}
+\href{http://www.mpt.net.nz/2012/06/why-free-software-has-poor-usability/}{Why free software has poor usability, and how to improve it}
 
 \subsection{motivating, joining, participating and contributing}
 
@@ -84,45 +83,170 @@ I want a detailed description of the process. For example, how are crash reports
   \item interdependent
 \end{enumerate}
 
-\section{Literature Review}
-Say how other scholars have tried to answer the questions that you mention above. The literature review must be
-relevant to the questions you are asking. For example, if you want to know how women's lives have changed as
-a result of starting a business in China, you do not need to review all the literature on China's political and
-economic reforms. Instead, you want to locate the literature on how women's lives are affected by the
-development of market economies.
+\section{Open Source Project}
 
-\section{Statement of Significance}
-Think about the overall implications of your work. Look beyond how undertaking the degree will help you
-personally. PhD or MPhil theses may have several implications. Consider the following:
+\subsection{Components}
 \begin{enumerate}
-  \item They may contribute to a body of academic literature. They may, for instance, advance a neglected theoretical
-position.
-  \item They may have practical or policy implications. For example, they may change the way that a certain group
-of people practice their occupation, handle their clients or deal with their work.
-  \item They may make a political statement or a cultural critic. They may point to an injustice, an inequality, or a
-contradiction.
+  \item Home Page
+  \item Code Repository
+  \item Mailing List
+  \item Bug Tracking System
+  \item Wiki
 \end{enumerate}
 
-But be realistic. It is not realistic to claim that your work will, say, transform the educational system in Hong
-Kong. It may be realistic, however, to say that your thesis will help explain why students often fail to live up to
-teachers' expectations.
+\subsection{Participating}
+\begin{enumerate}
+  \item Starting
+  \item Discussion
+  \begin{itemize}
+    \item Subscribe Mailing List
+    \item Take part in News Group
+    \item Participate in Conference
+  \end{itemize}
+  \item \textbf{Programming and Debugging}
+  \begin{itemize}
+    \item Consummate documents
+    \item Running test codes
+    \item Report Bugs
+    \item Submit patch
+  \end{itemize}
+  \item Improving
+\end{enumerate}
 
-\section{Research Methodology}
-Research methodology concerns the manner by which data are collected. Documentation, observation, in-depth
-interview, survey, and statistical data are the main methods of data collection in the social sciences.
+\subsection{Developing}
+\begin{enumerate}
+  \item Creating a Repository
+  \item Making Changes
+  \begin{itemize}
+    \item Adding Files
+    \item Committing Changes
+    \item Files Status and Differences
+    \item Managing Files
+  \end{itemize}
+  \item \textbf{Managing Branches}
+  \begin{itemize}
+    \item Creating Branches
+    \item Merging Branches
+    \item Handling Conflicts
+    \item Deleting and renaming branches
+\end{itemize}
+  \item Handling Releases
+\end{enumerate}
 
-Your methodology must be  appropriate  to the questions you are asking. That is, you must show how the
-methods you use will answer the questions you are asking. If you want to study recreational drug use in Hong
-Kong, for example, it would not be appropriate to study only youth in your housing estate who do not take drugs.
+\section{Programming and Debugging}
 
-Further, your methodology must be feasible. A proposal to interview workers from 500 factories in Shenzhen is
-not feasible--in the time that you have to complete the degree. It may, however, be feasible to interview workers
-from ten factories, or obtain production statistics from 500 enterprises.
+For example, how are crash reports handled? How are bug reports handled? How are bugs classified and confirmed?
 
-Finally, your methodology must be detailed. For example, if you plan to do a survey, how many people do you
-plan to include in your sample? And how will you decide which people to sample?
-%
-\nocite{*}
+\subsection{Basic Debugging}
+
+\subsection{Functional Debugging}
+
+\section{Maintaining and Branching}
+
+How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
+
+\subsection{Branching}
+Branching means you diverge from the main line of development and continue to do work without messing with that main line. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast.
+
+A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. As you initially make commits, you’re given a master branch that points to the last commit you made. Every time you commit, it moves forward automatically.
+
+\begin{enumerate}
+\item \textbf{Creating Branching:} To create a branch and switch to it at the same time, you can run:
+\begin{verbatim}
+  git checkout -b example
+\end{verbatim}
+Then you can do the following work in the branch:
+  \begin{itemize}
+    \item Test Changing
+    \item Add new functionality
+    \item Fix bugs
+  \end{itemize}
+At this stage, you’ll receive a call that another issue is critical and you need a hotfix. You’ll do the following:
+\begin{enumerate}
+  \item Revert back to your production branch.
+  \item Create a branch to add the hotfix.
+  \item After it’s tested, merge the hotfix branch, and push to production.
+  \item Switch back to your original story and continue working.
+\end{enumerate}
+\item \textbf{Merging Branching:} Combine directory and file contents from separate sources to yield one combined result. Suppose you’ve decided that your issue is complete and ready to be merged into your master branch. All you have to do is check out the branch you wish to merge into and then run the git merge command:
+\begin{verbatim}
+  git checkout master
+  git merge example
+\end{verbatim}
+
+\begin{itemize}
+  \item Sources for merges are local branches
+  \item Merges always occur in the current, checked-out branch
+  \item A complete merge ends with a new commit
+\end{itemize}
+
+Merge heuristics:
+\begin{itemize}
+  \item Several merge strategies: resolve, recursive, octopus, ours
+  \item Techniques: fastforward, threeway
+\end{itemize}
+
+Merge types
+  \begin{itemize}
+    \item straight merge
+    \item squashed commits
+    \item cherry picking
+  \end{itemize}
+\item \textbf{Handling Conflicts:} Occasionally, this process doesn’t go smoothly. If you changed the same part of the same file differently in the two branches you’re merging together, Git won’t be able to merge them cleanly. You’ll get a merge conflict information.
+    It has paused the process while you resolve the conflict. If you want to see which files are unmerged at any point after a merge conflict, you can run git status:
+    \begin{verbatim}
+      git status
+    \end{verbatim}
+  You can handle this conflict by manual or other tools.  
+  \begin{enumerate}
+    \item Manual: Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts.
+    \item Tools: If you want to use a graphical tool to resolve these issues, you can run git mergetool, which fires up an appropriate visual merge tool and walks you through the conflicts:
+    \begin{verbatim}
+      git mergetool
+    \end{verbatim}
+  \end{enumerate}
+\item \textbf{Deleting and renaming branches:} Now that your work is merged in, you have no further need for the example branch. You can delete it and then manually close the ticket in your tracking system:
+\begin{verbatim}
+  git branch -d example
+\end{verbatim}
+\end{enumerate}
+
+\subsection{Other Issues}
+\begin{enumerate}
+  \item \textbf{Pushing:} When you want to share a branch with the world, you need to push it up to a remote that you have write access to. Your local branches aren’t automatically synchronized to the remotes you write to — you have to explicitly push the branches you want to share. That way, you can use private branches for work you don’t want to share, and push up only the topic branches you want to collaborate on.
+  \item \textbf{Tracking:} Checking out a local branch from a remote branch automatically creates what is called a tracking branch. Tracking branches are local branches that have a direct relationship to a remote branch. If you’re on a tracking branch and type git push, Git automatically knows which server and branch to push to. Also, running git pull while on one of these branches fetches all the remote references and then automatically merges in the corresponding remote branch.
+  \item \textbf{Rebasing:} In Git, there are two main ways to integrate changes from one branch into another: the merge and the rebase.
+\end{enumerate}
+
+
+\subsection{Sending Changes Upstream}
+\begin{itemize}
+  \item Generate and send patches via email
+  \begin{itemize}
+    \item Most developers send patches to a maintainer or list
+    \item Highly visible public review of patches on mail list
+  \end{itemize}
+\item Maintainer pulls updates from a downstream developer
+\begin{itemize}
+  \item Maintainer can directly pull from your published repository
+  \item Initiated by upstream maintainer
+\end{itemize}
+  \item Developer pushes updates to an upstream maintainer
+  \begin{itemize}
+  \item Some developers have write permissions on an upstream repository
+  \item Initiated by downstream developer
+\end{itemize}
+\end{itemize}
+
+
+\nocite{Bonaccorsi20031243}
+\nocite{chacon2009pro}
+\nocite{Hertel20031159}
+\nocite{kernighan1999practice}
+\nocite{Kogut01062001}
+\nocite{scacchi2006understanding}
+\nocite{vonKrogh20031149}
+\nocite{Yilmaz06techniquesand}
 
 \renewcommand\refname{References}
 \bibliographystyle{abbrv}
