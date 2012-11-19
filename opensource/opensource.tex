@@ -34,67 +34,28 @@ E-mail: mayongsen@gmail.com}
 
 \section{Introduction}
 
-\href{http://www.ted.com/talks/aaron_koblin.html}{Aaron Koblin: Artfully visualizing our humanity}
+Open source software development projects are generally Internet-based networks or communities of software developers. The software and codes are made freely available to all that adhere to the licensing terms. Open source software projects and development processes have spread rapidly and widely. The number of developers participating in each project ranges from a few to many thousands, and so does the number of users.
 
-\href{http://www.mpt.net.nz/2012/06/why-free-software-has-poor-usability/}{Why free software has poor usability, and how to improve it}
+In sharp contrast with the traditional software development, all the developers are offered free access to the source code of open source software. This means that anyone with the proper programming knowledge and motivations can use, study, and modify any open source software. Currently, the rapid technological advances in computer hardware, software and networking have made it much easier to create and sustain a communal development style at ever-larger scales.
 
-\subsection{motivating, joining, participating and contributing}
+Through the experience of participating, programming and contributing, developers can find the opportunity to learn, practice and share. For every individuals, project groups, and organizations that are associated with the open source software, they can improve or adapt their processes and practices more effectively. Also, the developers appear to really enjoy their work, and to be recognized as trustworthy and reputable contributors. They can also self-select the technical roles they will take on as part of their participation in a project, rather than be assigned to a role in a traditionally managed software engineering project. Moreover, many developers participate in and contribute to multiple projects, and most participants typically contribute to just a single module. Though a small minority of modules may include patches or modifications contributed by hundreds of contributors both individually and collaboratively.
 
+%
+%\begin{enumerate}
+%  \item acquire: knowledge, experience, opportunities; backup, platform
+%  \item participate: happiness, communication
+%  \item contribute: freedom, trustworthy
+%\end{enumerate}
+A complete open source software system is typically composed of the following components:
 \begin{enumerate}
-  \item acquire: knowledge, experience, opportunities; backup, platform
-  \item participate: happiness, communication
-  \item contribute: freedom, trustworthy
+  \item \textbf{Home Page:} the gateway to the open source project. It is mainly composed of the project documents, available versions, and links to related resources. It plays a guide role, through which both developers and users can quickly find the information they need.
+  \item \textbf{Code Repository:} the core of an open source project. All the development is carried out around the code repository. The code repository is governed by a community consisting of developers who can commit code to the authorized version of the software.
+  \item \textbf{Mailing List:} the platform for problem discussion and information sharing. It is widely used as the official communication method in open source projects, or even utilized as bug tracking for the open source projects that have no bug tracking system.
+  \item \textbf{Bug Tracking System:} the system for tracking software bugs. It helps developers to manage software defects and improve the quality of software. It also provides a simple way of collecting feedback information from the users.
+  \item \textbf{Wiki:} the pages written in simple markup language. Because of its open and collaborative characteristics of document writing mode, it is widely used in open source project as a primary method of document preparation.
 \end{enumerate}
 
-\begin{enumerate}
-  \item developer
-  \item user(evaluation)
-\end{enumerate}
-
-\begin{enumerate}
-  \item public
-  \item private
-\end{enumerate}
-
-\subsection{modeling, examination, investigation}
-
-\begin{enumerate}
-  \item individuals
-  \item groups
-  \item organizations
-\end{enumerate}
-
-\begin{enumerate}
-  \item operate systems
-  \item web
-  \item application
-  \item network
-\end{enumerate}
-
-\begin{enumerate}
-  \item contribute:
-  \item process: stable, scalable
-  \item acquire: software, individuals, groups
-\end{enumerate}
-
-\begin{enumerate}
-  \item graph theory
-  \item multiproject
-  \item interdependent
-\end{enumerate}
-
-\section{Open Source Project}
-
-\subsection{Components}
-\begin{enumerate}
-  \item Home Page
-  \item Code Repository
-  \item Mailing List
-  \item Bug Tracking System
-  \item Wiki
-\end{enumerate}
-
-\subsection{Participating}
+\subsection{Participating and Developing}
 \begin{enumerate}
   \item Starting
   \item Discussion
@@ -113,7 +74,8 @@ E-mail: mayongsen@gmail.com}
   \item Improving
 \end{enumerate}
 
-\subsection{Developing}
+\subsection{Contributing and Maintaining}
+
 \begin{enumerate}
   \item Creating a Repository
   \item Making Changes
@@ -123,7 +85,7 @@ E-mail: mayongsen@gmail.com}
     \item Files Status and Differences
     \item Managing Files
   \end{itemize}
-  \item \textbf{Managing Branches}
+  \item \textbf{Maintaining and Branching}
   \begin{itemize}
     \item Creating Branches
     \item Merging Branches
@@ -137,13 +99,84 @@ E-mail: mayongsen@gmail.com}
 
 For example, how are crash reports handled? How are bug reports handled? How are bugs classified and confirmed?
 
+Good programmers know that they spend as much time debugging as writing so they try to learn from their mistakes. Every bug you find can teach you how to prevent a similar bug from happening again or to recognize it if it does.
+
+Debugging is hard and can take long and unpredictable amounts of time, so the goal is to avoid having to do much of it. Techniques that help reduce debugging time include good design, good style, boundary condition tests, assertions and sanity checks in the code, defensive programming, well-designed interfaces, limited global data, and checking tools.
+
+A major force in the evolution of programming languages has been the attempt to prevent bugs through language features. Some features make classes of errors less likely: range checking on subscripts. restricted pointers or no pointers at all, garbage collection, string data types and strong type-checking. On the opposite side of the coin, some features are prone to error, like \textit{goto} statements, global variables, unrestricted pointers, and automatic type conversions. Programmers should know the potentially risky bits of their languages and take extra care when using them. They should also enable all compiler checks and heed the warnings.
+
+\subsection{Debuggers}
+A debugger can be invoked directly when a problem is known to exist. Some debuggers take over automatically when something unexpectedly goes wrong during program execution. It's usually easy to find out where the program was executing when it died, examine the sequence of functions that were active (the stack trace), and display the values of local and global variables. That much information may be sufficient to identify a bug. If not, breakpoints and stepping make it possible to re-run a failing program one step at a time to find the first place where something goes wrong.\cite{kernighan1999practice}
+
+Once a bug has been seen, the first thing to do is to think hard about the clues it presents. How could it have come about? Is it something familiar? Was something just changed in the program? Is there something special about the input data that provoked it? A few well-chosen test cases and a few print statements in the code may be enough.
+
+If there aren't good clues, hard thinking is still the best first step, to be followed by systematic attempts to narrow down the location of the problem. One step is cutting down the input data to make a small input that fails; another is cutting out code to eliminate regions that can't be related. It's possible to insert checking code that gets turned on only after the program has executed some number of steps, again to try to localize the problem.
+
+Use other aids as well. Explaining your code to someone else (even a teddy bear) is wonderfully effective. Use a debugger to get a stack trace. Use some of the commercial tools that check for memory leaks, array bounds violations, suspect code, and the like. Step through your program when it has become clear that you have the wrong mental picture of how the code works.
+
+Know yourself, and the kinds of errors you make. Once you have found and fixed a bug, make sure that you eliminate other bugs that might be similar. Think about what happened so you can avoid making that kind of mistake again.
 \subsection{Basic Debugging}
+\begin{enumerate}
+  \item \textbf{Good Clues, Easy Bugs:} Something impossible occurred, and the only solid information is that it really did occur.
+So we must think backwards from the result to discover the reasons. Once we have a full explanation, we'll know what to fix and, along the way, likely discover a few other things we hadn't expected.
+\begin{itemize}
+  \item \textit{Look for familiar patterns.} Ask yourself whether this is a familiar pattern. "I've seen that before" is often the beginning of understanding, or even the whole answer.
+  \item \textit{Examine the most recent change.} If you're changing only one thing at a time as a program evolves, the bug most likely is either in the new code or has been exposed by it.
+  \item \textit{Don't make the same mistake twice.} After you fix a bug, ask whether you might have made the same mistake somewhere else.
+  \item \textit{Debug it now, not later.} Being in too much of a hurry can hurt in other situations as well. Don't ignore a crash when it happens; track it down right away, since it may not happen again until it's too late.
+  \item \textit{Get a stack trace.} Although debuggers can probe running programs, one of their most common uses is to examine the state of a program after death.
+  \item \textit{Read before typing.} One effective but under-appreciated debugging technique is to read the code very carefully and think about it for a while without making changes.
+  \item \textit{Explain your code to someone else.} Another effective technique is to explain your code to somcone else. This will often cause you to explain the bug to yourself.
+\end{itemize}
+  \item \textbf{No Clues, Hard Bugs}
+  \begin{itemize}
+    \item \textit{Make the bug reproducible.} The first step is to make sure you can make the bug appear on demand. It's frustrating to chase down a bug that doesn't happen every time.
+    \item \textit{Divide and conquer.} Each test case should aim at a definitive outcome that confirms or denies a specific hypothesis about what is wrong.
+    \item \textit{Study the numerology of failures.} Studying the patterns of numbers related to the failure pointed us right at the bug.
+    \item \textit{Display output to localize your search.} If you don't understand what the program is doing, adding statements to display more information can be the easiest, most effective way to find out.
+    \item \textit{Write self-checking code.} If more information is needed, you can write your own check function to test a condition, dump relevant variables.
+    \item \textit{Write a log file.} Another tactic is to write a log file containing a fixed-format stream of debugging output. When a crash occurs. the log records what happened just before the crash.
+    \item \textit{Draw a picture.} Sometimes pictures are more effective than text for testing and debugging.
+    \item \textit{Use tools.} Make good use of the facilities of the environment where you are debugging. Use shell scripts and other tools to automate the processing of the output from debugging runs.
+    \item \textit{Keep records.} If you record your tests and results, you are less likely to overlook something or to think hat you have checked some possibility when you haven't.
+    \end{itemize}
+  \item \textbf{Non-reproducible Bugs:} Bugs that won't stand still are the most difficult to deal with, and usually the problem isn't as obvious as failing hardware. The very fact that the behavior is nondeterministic is itself information, however; it means that the error is not likely to be a flaw in your algorithm but that in some way your code is using information that changes each time the program runs.
+      \begin{itemize}
+        \item Check whether all variables have been initialized. Local variables of functions and memory obtained from allocators are the most likely culprits in C and C++.
+        \item If the bug changes behavior or even disappears when debugging code is added. it may be a memory allocation error-somewhere you have written outside of allocated memory, and the addition of debugging code changes the layout of storage enough to change the effect of the bug.
+        \item If the crash site seems far away from anything that could be wrong, the most likely problem is overwriting memory by storing into a memory location that isn't used until much later.
+        \item When a program works for one person but fails for another, something must depend on the external environment of the program. This might include files read by the program, file permissions, environment variables, search path for commands, defaults, or startup files.
+      \end{itemize}
+\end{enumerate}
 
 \subsection{Functional Debugging}
 
 \section{Maintaining and Branching}
 
 How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
+
+Because Git is very flexible, people can and do work together many ways, and it’s problematic to describe how you should contribute to a project — every project is a bit different. Some of the variables involved are active contributor size, chosen workflow, your commit access, and possibly the external contribution method.
+\begin{enumerate}
+  \item active contributor size: How many users are actively contributing code to this project, and how often? In many instances, you’ll have two or three developers with a few commits a day, or possibly less for somewhat dormant projects. For really large companies or projects, the number of developers could be in the thousands, with dozens or even hundreds of patches coming in each day. This is important because with more and more developers, you run into more issues with making sure your code applies cleanly or can be easily merged. Changes you submit may be rendered obsolete or severely broken by work that is merged in while you were working or while your changes were waiting to be approved or applied. How can you keep your code consistently up to date and your patches valid?
+  \item workflow in use: Is it centralized, with each developer having equal write access to the main codeline? Does the project have a maintainer or integration manager who checks all the patches? Are all the patches peer-reviewed and approved? Are you involved in that process? Is a lieutenant system in place, and do you have to submit your work to them first?
+  \item commit access: The workflow required in order to contribute to a project is much different if you have write access to the project than if you don’t. If you don’t have write access, how does the project prefer to accept contributed work? Does it even have a policy? How much work are you contributing at a time? How often do you contribute?
+\end{enumerate}
+
+All these questions can affect how you contribute effectively to a project and what workflows are preferred or available to you. I’ll cover aspects of each of these in a series of use cases, moving from simple to more complex; you should be able to construct the specific workflows you need in practice from these examples.
+
+\subsection{Maintaining}
+In addition to knowing how to effectively contribute to a project, you’ll likely need to know how to maintain one. This can consist of accepting and applying patches generated via format-patch and e-mailed to you, or integrating changes in remote branches for repositories you’ve added as remotes to your project. Whether you maintain a canonical repository or want to help by verifying or approving patches, you need to know how to accept work in a way that is clearest for other contributors and sustainable by you over the long run.
+\begin{enumerate}
+  \item Working in Topic Branches: When you’re thinking of integrating new work, it’s generally a good idea to try it out in a topic branch — a temporary branch specifically made to try out that new work. This way, it’s easy to tweak a patch individually and leave it if it’s not working until you have time to come back to it.
+  \item Applying Patches from E-mail: If you receive a patch over e-mail that you need to integrate into your project, you need to apply the patch in your topic branch to evaluate it. There are two ways to apply an e-mailed patch: with \textit{git apply} or with \textit{git am}.
+  \item Checking Out Remote Branches: If your contribution came from a Git user who set up their own repository, pushed a number of changes into it, and then sent you the URL to the repository and the name of the remote branch the changes are in, you can add them as a remote and do merges locally.
+  \item Determining What Is Introduced: Now you have a topic branch that contains contributed work. At this point, you can determine what you’d like to do with it. This section revisits a couple of commands so you can see how you can use them to review exactly what you’ll be introducing if you merge this into your main branch.
+  \item Integrating Contributed Work: When all the work in your topic branch is ready to be integrated into a more mainline branch, the question is how to do it. Furthermore, what overall workflow do you want to use to maintain your project? You have a number of choices, so I’ll cover a few of them.
+  \item Tagging Your Releases: When you’ve decided to cut a release, you’ll probably want to drop a tag so you can re-create that release at any point going forward.
+  \item Generating a Build Number: Because Git doesn’t have monotonically increasing numbers like ‘v123’ or the equivalent to go with each commit, if you want to have a human-readable name to go with a commit, you can run git describe on that commit.
+  \item Preparing a Release: Now you want to release a build. One of the things you’ll want to do is create an archive of the latest snapshot of your code for those poor souls who don’t use Git.
+  \item The Shortlog: It’s time to e-mail your mailing list of people who want to know what’s happening in your project. A nice way of quickly getting a sort of changelog of what has been added to your project since your last release or e-mail is to use the git shortlog command.
+\end{enumerate}
 
 \subsection{Branching}
 Branching means you diverge from the main line of development and continue to do work without messing with that main line. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast.
@@ -197,7 +230,7 @@ Merge types
     \begin{verbatim}
       git status
     \end{verbatim}
-  You can handle this conflict by manual or other tools.  
+  You can handle this conflict by manual or other tools.
   \begin{enumerate}
     \item Manual: Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts.
     \item Tools: If you want to use a graphical tool to resolve these issues, you can run git mergetool, which fires up an appropriate visual merge tool and walks you through the conflicts:
@@ -222,21 +255,48 @@ Merge types
 \subsection{Sending Changes Upstream}
 \begin{itemize}
   \item Generate and send patches via email
-  \begin{itemize}
-    \item Most developers send patches to a maintainer or list
-    \item Highly visible public review of patches on mail list
-  \end{itemize}
+    \begin{itemize}
+      \item Most developers send patches to a maintainer or list
+      \item Highly visible public review of patches on mail list
+    \end{itemize}
 \item Maintainer pulls updates from a downstream developer
-\begin{itemize}
-  \item Maintainer can directly pull from your published repository
-  \item Initiated by upstream maintainer
-\end{itemize}
+    \begin{itemize}
+      \item Maintainer can directly pull from your published repository
+      \item Initiated by upstream maintainer
+    \end{itemize}
   \item Developer pushes updates to an upstream maintainer
-  \begin{itemize}
-  \item Some developers have write permissions on an upstream repository
-  \item Initiated by downstream developer
-\end{itemize}
+    \begin{itemize}
+      \item Some developers have write permissions on an upstream repository
+      \item Initiated by downstream developer
+    \end{itemize}
 \end{itemize}
+
+\section{Issues on Cloud Programming}
+
+\href{http://www.ted.com/talks/aaron_koblin.html}{Aaron Koblin: Artfully visualizing our humanity}
+
+\href{http://www.mpt.net.nz/2012/06/why-free-software-has-poor-usability/}{Why free software has poor usability, and how to improve it}
+
+\subsection{modeling, examination, investigation}
+
+\begin{enumerate}
+  \item individuals
+  \item groups
+  \item organizations
+\end{enumerate}
+
+\begin{enumerate}
+  \item operate systems
+  \item web
+  \item application
+  \item network
+\end{enumerate}
+
+\begin{enumerate}
+  \item contribute:
+  \item process: stable, scalable
+  \item acquire: software, individuals, groups
+\end{enumerate}
 
 
 \nocite{Bonaccorsi20031243}
