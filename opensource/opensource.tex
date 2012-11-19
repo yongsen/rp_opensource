@@ -17,7 +17,7 @@
 
 \begin{document}
 
-\title{Open Source Software Development Process}
+\title{Open Source Software Development Process: Debugging and Maintaining}
 
 \author{\IEEEauthorblockN{Yongsen MA} \\
 \IEEEauthorblockA{Shanghai Jiao Tong University \\
@@ -40,6 +40,8 @@ In sharp contrast with the traditional software development, all the developers 
 
 Through the experience of participating, programming and contributing, developers can find the opportunity to learn, practice and share. For every individuals, project groups, and organizations that are associated with the open source software, they can improve or adapt their processes and practices more effectively. Also, the developers appear to really enjoy their work, and to be recognized as trustworthy and reputable contributors. They can also self-select the technical roles they will take on as part of their participation in a project, rather than be assigned to a role in a traditionally managed software engineering project. Moreover, many developers participate in and contribute to multiple projects, and most participants typically contribute to just a single module. Though a small minority of modules may include patches or modifications contributed by hundreds of contributors both individually and collaboratively.
 
+An open source software development project is typically initiated by an individual or a small group with an idea for personal or business reason. The project initiators also generally become the project “owners” or “maintainers” who take on responsibility for project management. The individual or group may develop an initial, rough version of the code that outlines the functionality envisioned. The source code for this first version is then made freely available to all via downloading from the Internet or Ftp server established by the project. The project founders also set up mailing lists for the project. Those interested in using or further developing the code can consult this list in order to get help running the software or writing code. The list can also be used to provide information or distribute new open source code for others to discuss and test further.
+
 %
 %\begin{enumerate}
 %  \item acquire: knowledge, experience, opportunities; backup, platform
@@ -50,10 +52,18 @@ A complete open source software system is typically composed of the following co
 \begin{enumerate}
   \item \textbf{Home Page:} the gateway to the open source project. It is mainly composed of the project documents, available versions, and links to related resources. It plays a guide role, through which both developers and users can quickly find the information they need.
   \item \textbf{Code Repository:} the core of an open source project. All the development is carried out around the code repository. The code repository is governed by a community consisting of developers who can commit code to the authorized version of the software.
-  \item \textbf{Mailing List:} the platform for problem discussion and information sharing. It is widely used as the official communication method in open source projects, or even utilized as bug tracking for the open source projects that have no bug tracking system.
   \item \textbf{Bug Tracking System:} the system for tracking software bugs. It helps developers to manage software defects and improve the quality of software. It also provides a simple way of collecting feedback information from the users.
+  \item \textbf{Mailing List:} the platform for problem discussion and information sharing. It is widely used as the official communication method in open source projects, or even utilized as bug tracking for the open source projects that have no bug tracking system.
   \item \textbf{Wiki:} the pages written in simple markup language. Because of its open and collaborative characteristics of document writing mode, it is widely used in open source project as a primary method of document preparation.
 \end{enumerate}
+
+For the newcomers who are interested in open source software, they can participate in the development progress and gradually contribute to more complex and technically difficult work both individually and collaboratively.
+
+In the case of projects that are successful in attracting interest, others do download and use and “play with” the code—and some of these do go on
+to create new and modified code based on their own interests. Most then post what they have done on the project website for use and critique by anyone who is interested. New and modified code that is deemed to be of sufficient quality and of general appeal by the project maintainers is then added to the “authorized” version of the code. In many projects the privilege of adding to the authorized code is restricted to only a few trusted “developers” who then become part of a “community” of developers. Most contributors are experienced, professional programmers. Some act as
+independent individuals volunteering to develop code, others are employees of organizations that support their participation.
+
+In summary, the open source software development process is mainly composed of the individual participating and developing and the collaborative maintaining and contributing.
 
 \subsection{Participating and Developing}
 \begin{enumerate}
@@ -95,7 +105,7 @@ A complete open source software system is typically composed of the following co
   \item Handling Releases
 \end{enumerate}
 
-\section{Programming and Debugging}
+\section{Debugging}
 
 For example, how are crash reports handled? How are bug reports handled? How are bugs classified and confirmed?
 
@@ -151,7 +161,7 @@ So we must think backwards from the result to discover the reasons. Once we have
 
 \subsection{Functional Debugging}
 
-\section{Maintaining and Branching}
+\section{Maintaining}
 
 How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
 
@@ -271,13 +281,16 @@ Merge types
     \end{itemize}
 \end{itemize}
 
-\section{Issues on Cloud Programming}
+\section{Cloud Programming}
 
 \href{http://www.ted.com/talks/aaron_koblin.html}{Aaron Koblin: Artfully visualizing our humanity}
 
 \href{http://www.mpt.net.nz/2012/06/why-free-software-has-poor-usability/}{Why free software has poor usability, and how to improve it}
 
-\subsection{modeling, examination, investigation}
+\subsection{Multi-stage Connecting}
+
+\subsection{Context-aware Modeling}
+
 
 \begin{enumerate}
   \item individuals
