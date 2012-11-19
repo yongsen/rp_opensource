@@ -1,18 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.29)  19 NOV 2012 10:43
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.21)  19 NOV 2012 15:03
 entering extended mode
 **opensource.tex
 (E:\Github\rp_opensource\opensource\opensource.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
-vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
-an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
-romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
-sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
-senglishmax, welsh, loaded.
+Babel <v3.8m> and hyphenation patterns for loaded.
 ("C:\Program Files\CTEX\MiKTeX\tex\latex\ieeetran\IEEEtran.cls"
 Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -523,7 +514,7 @@ Missing character: There is no ô in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 198.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 202.
 
 
 ("C:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd"
@@ -579,30 +570,30 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ê in font ptmr7t!
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 330.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 334.
  [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 330.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 334.
 
 (E:\Github\rp_opensource\opensource\opensource.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 330.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 330.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 334.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 334.
  ) 
 Here is how much of TeX's memory you used:
- 8492 strings out of 494045
- 130202 string characters out of 3148016
- 214197 words of memory out of 3000000
- 11611 multiletter control sequences out of 15000+200000
+ 8490 strings out of 495354
+ 130182 string characters out of 3183074
+ 213191 words of memory out of 3000000
+ 11487 multiletter control sequences out of 15000+200000
  39116 words of font info for 80 fonts, out of 3000000 for 9000
- 718 hyphenation exceptions out of 8191
- 36i,6n,38p,953b,500s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 17 hyphenation exceptions out of 8191
+ 36i,6n,38p,953b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/Program Fil
 es/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/CTEX/
 MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/CTEX/MiKTeX/fonts/t
 ype1/urw/times/utmb8a.pfb><C:/Program Files/CTEX/MiKTeX/fonts/type1/urw/times/u
 tmr8a.pfb><C:/Program Files/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on opensource.pdf (13 pages, 110879 bytes).
+Output written on opensource.pdf (13 pages, 110946 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
- 129 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 224 PDF objects out of 1000 (max. 8388607)
+ 88 named destinations out of 1000 (max. 500000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -63,25 +63,26 @@ In the case of projects that are successful in attracting interest, others do do
 to create new and modified code based on their own interests. Most then post what they have done on the project website for use and critique by anyone who is interested. New and modified code that is deemed to be of sufficient quality and of general appeal by the project maintainers is then added to the “authorized” version of the code. In many projects the privilege of adding to the authorized code is restricted to only a few trusted “developers” who then become part of a “community” of developers. Most contributors are experienced, professional programmers. Some act as
 independent individuals volunteering to develop code, others are employees of organizations that support their participation.
 
-In summary, the open source software development process is mainly composed of the individual participating and developing and the collaborative maintaining and contributing.
+In summary, the open source software development process is mainly composed of the \textbf{individual participating and developing} and the \textbf{collaborative contributing and maintaining}.
 
 \subsection{Participating and Developing}
 \begin{enumerate}
-  \item Starting
-  \item Discussion
+  \item Starting: know enough about the open source project, familiar with the functions and features of the project, find the part that you are interested in.
+  \item Discussion: the most important decision are usually made by technical discussions. To contribute to community work, you should actively participate in the following discussions:
   \begin{itemize}
     \item Subscribe Mailing List
-    \item Take part in News Group
+    \item Take Part in News Group
     \item Participate in Conference
   \end{itemize}
-  \item \textbf{Programming and Debugging}
+  \item \textbf{Programming and Debugging:} based on the understanding of the open source project and the discussion on specific topic, then be concentrate on the source code and other related issues:
   \begin{itemize}
-    \item Consummate documents
-    \item Running test codes
+    \item Maintain Website
+    \item Consummate Documents
+    \item Run Test Codes
     \item Report Bugs
-    \item Submit patch
+    \item Submit Patches
   \end{itemize}
-  \item Improving
+  \item Improving: gain the experience and programming ability by participating and developing.
 \end{enumerate}
 
 \subsection{Contributing and Maintaining}
@@ -90,42 +91,39 @@ In summary, the open source software development process is mainly composed of t
   \item Creating a Repository
   \item Making Changes
   \begin{itemize}
-    \item Adding Files
-    \item Committing Changes
-    \item Files Status and Differences
-    \item Managing Files
+    \item Add Files
+    \item Commit Changes
+    \item Maintain Files Status and Differences
+    \item Manage Files
   \end{itemize}
   \item \textbf{Maintaining and Branching}
   \begin{itemize}
-    \item Creating Branches
-    \item Merging Branches
-    \item Handling Conflicts
-    \item Deleting and renaming branches
+    \item Create Branches
+    \item Merge Branches
+    \item Handle Conflicts
+    \item Delete and Renaming Branches
 \end{itemize}
-  \item Handling Releases
+  \item Handle Releases
 \end{enumerate}
 
+The core of the open source project is the \textbf{development} and \textbf{maintenance} of the source code. In the following, this report will give a detailed investigation on the debugging and maintaining issues in open source software development process.
+ 
 \section{Debugging}
 
-For example, how are crash reports handled? How are bug reports handled? How are bugs classified and confirmed?
+%For example, how are crash reports handled? How are bug reports handled? How are bugs classified and confirmed?
 
-Good programmers know that they spend as much time debugging as writing so they try to learn from their mistakes. Every bug you find can teach you how to prevent a similar bug from happening again or to recognize it if it does.
+It may spend as much time debugging as coding for programmers, so they need to learn from their mistakes. Every bug can teach developers how to prevent a similar bug from happening again or to recognize it if it does.
 
-Debugging is hard and can take long and unpredictable amounts of time, so the goal is to avoid having to do much of it. Techniques that help reduce debugging time include good design, good style, boundary condition tests, assertions and sanity checks in the code, defensive programming, well-designed interfaces, limited global data, and checking tools.
+Generally, the debugs can be classified into basic bugs and functional bugs. The basic bugs is closely related to the syntax and rules of the program languages \cite{kernighan1999practice}. In some cases, 
 
-A major force in the evolution of programming languages has been the attempt to prevent bugs through language features. Some features make classes of errors less likely: range checking on subscripts. restricted pointers or no pointers at all, garbage collection, string data types and strong type-checking. On the opposite side of the coin, some features are prone to error, like \textit{goto} statements, global variables, unrestricted pointers, and automatic type conversions. Programmers should know the potentially risky bits of their languages and take extra care when using them. They should also enable all compiler checks and heed the warnings.
-
-\subsection{Debuggers}
-A debugger can be invoked directly when a problem is known to exist. Some debuggers take over automatically when something unexpectedly goes wrong during program execution. It's usually easy to find out where the program was executing when it died, examine the sequence of functions that were active (the stack trace), and display the values of local and global variables. That much information may be sufficient to identify a bug. If not, breakpoints and stepping make it possible to re-run a failing program one step at a time to find the first place where something goes wrong.\cite{kernighan1999practice}
+\subsection{Basic Debugging}
 
 Once a bug has been seen, the first thing to do is to think hard about the clues it presents. How could it have come about? Is it something familiar? Was something just changed in the program? Is there something special about the input data that provoked it? A few well-chosen test cases and a few print statements in the code may be enough.
 
 If there aren't good clues, hard thinking is still the best first step, to be followed by systematic attempts to narrow down the location of the problem. One step is cutting down the input data to make a small input that fails; another is cutting out code to eliminate regions that can't be related. It's possible to insert checking code that gets turned on only after the program has executed some number of steps, again to try to localize the problem.
 
-Use other aids as well. Explaining your code to someone else (even a teddy bear) is wonderfully effective. Use a debugger to get a stack trace. Use some of the commercial tools that check for memory leaks, array bounds violations, suspect code, and the like. Step through your program when it has become clear that you have the wrong mental picture of how the code works.
+Use other aids as well. Use a debugger to get a stack trace. Use some of the commercial tools that check for memory leaks, array bounds violations, suspect code, and the like. Step through your program when it has become clear that you have the wrong mental picture of how the code works.
 
-Know yourself, and the kinds of errors you make. Once you have found and fixed a bug, make sure that you eliminate other bugs that might be similar. Think about what happened so you can avoid making that kind of mistake again.
-\subsection{Basic Debugging}
 \begin{enumerate}
   \item \textbf{Good Clues, Easy Bugs:} Something impossible occurred, and the only solid information is that it really did occur.
 So we must think backwards from the result to discover the reasons. Once we have a full explanation, we'll know what to fix and, along the way, likely discover a few other things we hadn't expected.
@@ -160,6 +158,12 @@ So we must think backwards from the result to discover the reasons. Once we have
 \end{enumerate}
 
 \subsection{Functional Debugging}
+
+Debugging is hard and can take long and unpredictable amounts of time, so the goal is to avoid having to do much of it. Techniques that help reduce debugging time include good design, good style, boundary condition tests, assertions and sanity checks in the code, defensive programming, well-designed interfaces, limited global data, and checking tools. On the other hand, some features are prone to error under certain cases, like \textit{goto} statements, global variables, unrestricted pointers, and automatic type conversions. Programmers should know the potentially risky bits of their languages and take extra care when using them. They should also enable all compiler checks and heed the warnings.
+
+It's usually easy to find out where the program was executing when it died, examine the sequence of functions that were active, and display the values of local and global variables. That much information may be sufficient to identify a bug. If not, breakpoints and stepping make it possible to re-run a failing program one step at a time to find the first place where something goes wrong.
+
+Once you have found and fixed a bug, make sure that you eliminate other bugs that might be similar. Think about what happened so you can avoid making that kind of mistake again.
 
 \section{Maintaining}
 
