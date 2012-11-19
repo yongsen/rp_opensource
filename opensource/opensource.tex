@@ -57,11 +57,7 @@ A complete open source software system is typically composed of the following co
   \item \textbf{Wiki:} the pages written in simple markup language. Because of its open and collaborative characteristics of document writing mode, it is widely used in open source project as a primary method of document preparation.
 \end{enumerate}
 
-For the newcomers who are interested in open source software, they can participate in the development progress and gradually contribute to more complex and technically difficult work both individually and collaboratively.
-
-In the case of projects that are successful in attracting interest, others do download and use and “play with” the code—and some of these do go on
-to create new and modified code based on their own interests. Most then post what they have done on the project website for use and critique by anyone who is interested. New and modified code that is deemed to be of sufficient quality and of general appeal by the project maintainers is then added to the “authorized” version of the code. In many projects the privilege of adding to the authorized code is restricted to only a few trusted “developers” who then become part of a “community” of developers. Most contributors are experienced, professional programmers. Some act as
-independent individuals volunteering to develop code, others are employees of organizations that support their participation.
+For the newcomers who are interested in open source software, they can participate in the development progress and gradually contribute to more complex and technically difficult work both individually and collaboratively. In the case that some projects are successful in attracting people to participate in the process, some of the developers do create new and modified code based on their own interests. New and modified code that is deemed to be of sufficient quality and of general appeal by the project maintainers is then added to the authorized version of the software. In many projects the privilege of adding to the authorized code is restricted to only a few trusted developers who then become part of a community. Most contributors are experienced, professional programmers. Some act as independent individuals volunteering to develop code, others are employees of organizations that support their participation.
 
 In summary, the open source software development process is mainly composed of the \textbf{individual participating and developing} and the \textbf{collaborative contributing and maintaining}.
 
@@ -114,46 +110,41 @@ The core of the open source project is the \textbf{development} and \textbf{main
 
 It may spend as much time debugging as coding for programmers, so they need to learn from their mistakes. Every bug can teach developers how to prevent a similar bug from happening again or to recognize it if it does.
 
-Generally, the debugs can be classified into basic bugs and functional bugs. The basic bugs is closely related to the syntax and rules of the program languages \cite{kernighan1999practice}. In some cases,
+Generally, the debugs can be classified into basic bugs and functional bugs. The basic bugs is closely related to the syntax and grammar rules of the program languages. In some other cases, the functional bugs will occur when there are conflicts related to hardware or software.
 
 \subsection{Basic Debugging}
 
-Once a bug has been seen, the first thing to do is to think hard about the clues it presents. How could it have come about? Is it something familiar? Was something just changed in the program? Is there something special about the input data that provoked it? A few well-chosen test cases and a few print statements in the code may be enough.
+As is presented in \cite{kernighan1999practice}, the bugs can be divided into three kinds, i.e., easy bugs in good clues, hard bugs in bad clues and non-reproducible bugs. Developers can adopt different methods to debug it based on the bugs types.
 
-If there aren't good clues, hard thinking is still the best first step, to be followed by systematic attempts to narrow down the location of the problem. One step is cutting down the input data to make a small input that fails; another is cutting out code to eliminate regions that can't be related. It's possible to insert checking code that gets turned on only after the program has executed some number of steps, again to try to localize the problem.
-
-Use other aids as well. Use a debugger to get a stack trace. Use some of the commercial tools that check for memory leaks, array bounds violations, suspect code, and the like. Step through your program when it has become clear that you have the wrong mental picture of how the code works.
+Once a bug has been seen, the first thing to do is to think about the clues it presents. Check about if it is something familiar or just because something is just changed in the program. A few test lines and a few display statements in the code may be enough to resolve it. If there aren't good clues, try to cut down the input data to make a small input that fails. Another method is cutting out code to eliminate regions that can not be related. It is also possible to insert checking code that gets turned on only after the program has executed some number of steps, again to try to localize the problem. Furthermore, try to use debugger tools to check for memory leaks, array bounds violations, suspect code.
 
 \begin{enumerate}
-  \item \textbf{Good Clues, Easy Bugs:} Something impossible occurred, and the only solid information is that it really did occur.
-So we must think backwards from the result to discover the reasons. Once we have a full explanation, we'll know what to fix and, along the way, likely discover a few other things we hadn't expected.
+  \item \textbf{Good Clues, Easy Bugs:} When some bugs occur, first think backwards to discover the reasons. Once we have a full explanation, we'll know what to fix and discover other things.
 \begin{itemize}
-  \item \textit{Look for familiar patterns.} Ask yourself whether this is a familiar pattern. "I've seen that before" is often the beginning of understanding, or even the whole answer.
-  \item \textit{Examine the most recent change.} If you're changing only one thing at a time as a program evolves, the bug most likely is either in the new code or has been exposed by it.
-  \item \textit{Don't make the same mistake twice.} After you fix a bug, ask whether you might have made the same mistake somewhere else.
-  \item \textit{Debug it now, not later.} Being in too much of a hurry can hurt in other situations as well. Don't ignore a crash when it happens; track it down right away, since it may not happen again until it's too late.
-  \item \textit{Get a stack trace.} Although debuggers can probe running programs, one of their most common uses is to examine the state of a program after death.
+  \item \textit{Look for familiar patterns.} If this is a familiar pattern, the bugs will be better understood and the answer can be easily found.
+  \item \textit{Examine the most recent change.} If only one thing is changed at a time as a program evolves, the bug most likely is in the new code.
+  \item \textit{Don't make the same mistake.} After a bug is fixed, remember not to make the same mistake somewhere else.
+  \item \textit{Debug it timely.} Don not ignore a crash when it happens. Try to track it down right away, since it may not happen again until it's too late.
+  \item \textit{Get a stack trace.} Although debuggers can probe running programs, one of the most common uses is to examine the state of a program after death.
   \item \textit{Read before typing.} One effective but under-appreciated debugging technique is to read the code very carefully and think about it for a while without making changes.
-  \item \textit{Explain your code to someone else.} Another effective technique is to explain your code to somcone else. This will often cause you to explain the bug to yourself.
 \end{itemize}
   \item \textbf{No Clues, Hard Bugs}
   \begin{itemize}
-    \item \textit{Make the bug reproducible.} The first step is to make sure you can make the bug appear on demand. It's frustrating to chase down a bug that doesn't happen every time.
+    \item \textit{Make the bug reproducible.} The first step is to make sure the bug can appear on demand. It is difficult to chase down a bug that does not happen every time.
     \item \textit{Divide and conquer.} Each test case should aim at a definitive outcome that confirms or denies a specific hypothesis about what is wrong.
-    \item \textit{Study the numerology of failures.} Studying the patterns of numbers related to the failure pointed us right at the bug.
-    \item \textit{Display output to localize your search.} If you don't understand what the program is doing, adding statements to display more information can be the easiest, most effective way to find out.
-    \item \textit{Write self-checking code.} If more information is needed, you can write your own check function to test a condition, dump relevant variables.
-    \item \textit{Write a log file.} Another tactic is to write a log file containing a fixed-format stream of debugging output. When a crash occurs. the log records what happened just before the crash.
-    \item \textit{Draw a picture.} Sometimes pictures are more effective than text for testing and debugging.
-    \item \textit{Use tools.} Make good use of the facilities of the environment where you are debugging. Use shell scripts and other tools to automate the processing of the output from debugging runs.
-    \item \textit{Keep records.} If you record your tests and results, you are less likely to overlook something or to think hat you have checked some possibility when you haven't.
+    \item \textit{Study the numerology of failures.} Try to study the patterns of numbers related to the failure pointed us right at the bug.
+    \item \textit{Display output.} Add some useful statements to display more information. It can be the easiest and most effective way to find out the problem.
+    \item \textit{Write self-checking code.} If more information is needed, write check function to test a condition, dump relevant variables.
+    \item \textit{Write a log file.} Write a log file containing a fixed-format stream of debugging output. When a crash occurs, the log records what happened just before the crash.
+    \item \textit{Use debug tools.} Make good use of the facilities of the environment as debugging. Use shell scripts and other tools to automate the processing of the output from debugging.
+    \item \textit{Keep records.} Keep the record of tests and results, it is less likely to overlook something or check some possibility unnecessarily.
     \end{itemize}
-  \item \textbf{Non-reproducible Bugs:} Bugs that won't stand still are the most difficult to deal with, and usually the problem isn't as obvious as failing hardware. The very fact that the behavior is nondeterministic is itself information, however; it means that the error is not likely to be a flaw in your algorithm but that in some way your code is using information that changes each time the program runs.
+  \item \textbf{Non-reproducible Bugs:} Bugs that won't stand still are the most difficult to deal with. It means that the error is not likely to be a flaw in the algorithm but that in some way the code is using information that changes each time the program runs.
       \begin{itemize}
         \item Check whether all variables have been initialized. Local variables of functions and memory obtained from allocators are the most likely culprits in C and C++.
-        \item If the bug changes behavior or even disappears when debugging code is added. it may be a memory allocation error-somewhere you have written outside of allocated memory, and the addition of debugging code changes the layout of storage enough to change the effect of the bug.
-        \item If the crash site seems far away from anything that could be wrong, the most likely problem is overwriting memory by storing into a memory location that isn't used until much later.
-        \item When a program works for one person but fails for another, something must depend on the external environment of the program. This might include files read by the program, file permissions, environment variables, search path for commands, defaults, or startup files.
+        \item If the bug changes or even disappears when debugging code is added, it may be a memory allocation error. The bug is outside of allocated memory, and the addition of debugging code changes the layout of storage enough to change the effect of the bug.
+        \item If the crash site seems far away from anything that could be wrong, the most likely problem is overwriting memory by storing into a memory location that isn't used later.
+        \item When a program works for one person but fails for another, something must depend on the external environment. This might include files read by the program, file permissions, environment variables, search path for commands, defaults, or startup files.
       \end{itemize}
 \end{enumerate}
 
