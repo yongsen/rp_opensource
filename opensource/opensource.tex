@@ -108,15 +108,13 @@ The core of the open source project is the \textbf{development} and \textbf{main
 
 %For example, how are crash reports handled? How are bug reports handled? How are bugs classified and confirmed?
 
-It may spend as much time debugging as coding for programmers, so they need to learn from their mistakes. Every bug can teach developers how to prevent a similar bug from happening again or to recognize it if it does.
-
-Generally, the debugs can be classified into basic bugs and functional bugs. The basic bugs is closely related to the syntax and grammar rules of the program languages. In some other cases, the functional bugs will occur when there are conflicts related to hardware or software.
+It may spend as much time debugging as coding for programmers, so they need to learn from their mistakes. Every bug can teach developers how to prevent a similar bug from happening again or to recognize it if it does. Generally, the debugs can be classified into basic bugs and functional bugs. The basic bugs is closely related to the syntax and grammar rules of the program languages. In some other cases, the functional bugs will occur when there are conflicts related to hardware or software.
 
 \subsection{Basic Debugging}
 
 As is presented in \cite{kernighan1999practice}, the bugs can be divided into three kinds, i.e., easy bugs in good clues, hard bugs in bad clues and non-reproducible bugs. Developers can adopt different methods to debug it based on the bugs types.
 
-Once a bug has been seen, the first thing to do is to think about the clues it presents. Check about if it is something familiar or just because something is just changed in the program. A few test lines and a few display statements in the code may be enough to resolve it. If there aren't good clues, try to cut down the input data to make a small input that fails. Another method is cutting out code to eliminate regions that can not be related. It is also possible to insert checking code that gets turned on only after the program has executed some number of steps, again to try to localize the problem. Furthermore, try to use debugger tools to check for memory leaks, array bounds violations, suspect code.
+Once a bug has been seen, the first thing to do is to think about the clues it presents. Check about if it is something familiar or just because something is just changed in the program. A few test lines and a few display statements in the code may be enough to resolve it. If there are no good clues, try to cut down the input data to make a small input that fails. Another method is cutting out code to eliminate regions that can not be related. It is also possible to insert checking code that gets turned on only after the program has executed some number of steps, again to try to localize the problem. Furthermore, try to use debugger tools to check for memory leaks, array bounds violations, suspect code.
 
 \begin{enumerate}
   \item \textbf{Good Clues, Easy Bugs:} When some bugs occur, first think backwards to discover the reasons. Once we have a full explanation, we'll know what to fix and discover other things.
@@ -144,7 +142,6 @@ Once a bug has been seen, the first thing to do is to think about the clues it p
         \item Check whether all variables have been initialized. Local variables of functions and memory obtained from allocators are the most likely culprits in C and C++.
         \item If the bug changes or even disappears when debugging code is added, it may be a memory allocation error. The bug is outside of allocated memory, and the addition of debugging code changes the layout of storage enough to change the effect of the bug.
         \item If the crash site seems far away from anything that could be wrong, the most likely problem is overwriting memory by storing into a memory location that isn't used later.
-        \item When a program works for one person but fails for another, something must depend on the external environment. This might include files read by the program, file permissions, environment variables, search path for commands, defaults, or startup files.
       \end{itemize}
 \end{enumerate}
 
@@ -154,6 +151,12 @@ Debugging is hard and can take long and unpredictable amounts of time, so the go
 
 It's usually easy to find out where the program was executing when it died, examine the sequence of functions that were active, and display the values of local and global variables. That much information may be sufficient to identify a bug. If not, breakpoints and stepping make it possible to re-run a failing program one step at a time to find the first place where something goes wrong.
 
+\begin{enumerate}
+  \item Try to use other stable software to make sure the hardware, devices, operating system and software are in good condition.
+  \item Examine carefully about which part is responsible for the bug, especially the code that changed most recently, to determine whether the bug is caused by the configuration of hardware, device, operating system or software.
+  \item When a program works for one person but fails for another, something must depend on the external environment. This might include files read by the program, file permissions, environment variables, search path for commands, defaults, or startup files.
+  \item 
+\end{enumerate}
 Once you have found and fixed a bug, make sure that you eliminate other bugs that might be similar. Think about what happened so you can avoid making that kind of mistake again.
 
 \section{Maintaining}
@@ -161,77 +164,77 @@ Once you have found and fixed a bug, make sure that you eliminate other bugs tha
 %How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
 
 \subsection{Branching}
-Branching means you diverge from the main line of development and continue to do work without messing with that main line. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast.
-
-A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. As you initially make commits, you’re given a master branch that points to the last commit you made. Every time you commit, it moves forward automatically.
+Branching means developers diverge from the main line of development and continue to do work without messing with that main line. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast. A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. When the commits are initially made, a master branch will point to the last commit. If new commit is add, the pointer will move forward automatically.
 
 \begin{enumerate}
-\item \textbf{Creating Branching:} To create a branch and switch to it at the same time, you can run:
+\item \textbf{Creating:} To create a branch and switch to it at the same time:
 \begin{verbatim}
   git checkout -b example
 \end{verbatim}
-Then you can do the following work in the branch:
+Then do the following work in the branch:
   \begin{itemize}
-    \item Test Changing
+    \item Test changing
     \item Add new functionality
     \item Fix bugs
   \end{itemize}
-At this stage, you’ll receive a call that another issue is critical and you need a hotfix. You’ll do the following:
+\item \textbf{Patching:} If another issue is critical at this stage, then do the following to add a hotfix:
 \begin{enumerate}
   \item Revert back to your production branch.
   \item Create a branch to add the hotfix.
   \item After it’s tested, merge the hotfix branch, and push to production.
   \item Switch back to your original story and continue working.
 \end{enumerate}
-\item \textbf{Merging Branching:} Combine directory and file contents from separate sources to yield one combined result. Suppose you’ve decided that your issue is complete and ready to be merged into your master branch. All you have to do is check out the branch you wish to merge into and then run the git merge command:
+\item \textbf{Merging:} Combine directory and file contents from separate sources to yield one combined result. If the issue is complete and ready to be merged into the master branch, check out the branch to be merged and then run the git merge command:
 \begin{verbatim}
   git checkout master
   git merge example
 \end{verbatim}
-
-\begin{itemize}
-  \item Sources for merges are local branches
-  \item Merges always occur in the current, checked-out branch
-  \item A complete merge ends with a new commit
-\end{itemize}
-
-Merge heuristics:
-\begin{itemize}
-  \item Several merge strategies: resolve, recursive, octopus, ours
-  \item Techniques: fastforward, threeway
-\end{itemize}
-
-Merge types
-  \begin{itemize}
-    \item straight merge
-    \item squashed commits
-    \item cherry picking
-  \end{itemize}
-\item \textbf{Handling Conflicts:} Occasionally, this process doesn’t go smoothly. If you changed the same part of the same file differently in the two branches you’re merging together, Git won’t be able to merge them cleanly. You’ll get a merge conflict information.
-    It has paused the process while you resolve the conflict. If you want to see which files are unmerged at any point after a merge conflict, you can run git status:
-    \begin{verbatim}
-      git status
-    \end{verbatim}
-  You can handle this conflict by manual or other tools.
+\item \textbf{Handling Conflicts:} Occasionally, this process does not go smoothly. If the same part of the same file differently in the two branches that will be merged together is changed, Git will not be able to merge them cleanly. Then there will be a merge conflict information. The conflict can be handled by manual or other tools.
   \begin{enumerate}
-    \item Manual: Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts.
-    \item Tools: If you want to use a graphical tool to resolve these issues, you can run git mergetool, which fires up an appropriate visual merge tool and walks you through the conflicts:
-    \begin{verbatim}
-      git mergetool
-    \end{verbatim}
-  \end{enumerate}
-\item \textbf{Deleting and renaming branches:} Now that your work is merged in, you have no further need for the example branch. You can delete it and then manually close the ticket in your tracking system:
+    \item Manual: Git adds standard conflict-resolution markers to the files that have conflicts, so open them manually and resolve those conflicts.
+    \item Tools: Git also provides graphical tools to resolve these issues, which fires up an appropriate visual merge tool handle the conflicts:
+  \end{enumerate} 
+\begin{verbatim}
+  git mergetool
+\end{verbatim}
+It has paused the process while the conflict is under resolving. To see which files are unmerged at any point after a merge conflict, run git status:
+\begin{verbatim}
+  git status
+\end{verbatim}
+\item \textbf{Deleting and Renaming:} When the work is merged in, there is no further need for the example branch. Delete it and then manually close the ticket in the tracking system:
 \begin{verbatim}
   git branch -d example
 \end{verbatim}
 \end{enumerate}
 
+%
+%\begin{itemize}
+%  \item Sources for merges are local branches
+%  \item Merges always occur in the current, checked-out branch
+%  \item A complete merge ends with a new commit
+%\end{itemize}
+%
+%Merge heuristics:
+%\begin{itemize}
+%  \item Several merge strategies: resolve, recursive, octopus, ours
+%  \item Techniques: fastforward, threeway
+%\end{itemize}
+%
+%Merge types
+%  \begin{itemize}
+%    \item straight merge
+%    \item squashed commits
+%    \item cherry picking
+%  \end{itemize}
+%  
 \subsection{Contributing}
-Because Git is very flexible, people can and do work together many ways, and it’s problematic to describe how you should contribute to a project — every project is a bit different. Some of the variables involved are active contributor size, chosen workflow, your commit access, and possibly the external contribution method.
+When developers want to share a branch with the world, they need to push it up to a remote one that have write access to. The local branches are not automatically synchronized to the remote servers. Also, developers can use private branches for work if they do not want to share, and push up only the topic branches that they want to collaborate on.
+
+Because Git is very flexible, people can and do work together many ways. It is problematic to describe how to contribute to a project, since every project is a bit different. Some of the variables involved are active contributor size, chosen workflow, commit access, and possibly the external contribution method.
 \begin{enumerate}
-  \item active contributor size: How many users are actively contributing code to this project, and how often? In many instances, you’ll have two or three developers with a few commits a day, or possibly less for somewhat dormant projects. For really large companies or projects, the number of developers could be in the thousands, with dozens or even hundreds of patches coming in each day. This is important because with more and more developers, you run into more issues with making sure your code applies cleanly or can be easily merged. Changes you submit may be rendered obsolete or severely broken by work that is merged in while you were working or while your changes were waiting to be approved or applied. How can you keep your code consistently up to date and your patches valid?
-  \item workflow in use: Is it centralized, with each developer having equal write access to the main codeline? Does the project have a maintainer or integration manager who checks all the patches? Are all the patches peer-reviewed and approved? Are you involved in that process? Is a lieutenant system in place, and do you have to submit your work to them first?
-  \item commit access: The workflow required in order to contribute to a project is much different if you have write access to the project than if you don’t. If you don’t have write access, how does the project prefer to accept contributed work? Does it even have a policy? How much work are you contributing at a time? How often do you contribute?
+  \item \textbf{Active contributor size:} This is important because with more and more developers, the project will run into more issues making sure the code applied cleanly or merged easily. The submitted changes may be rendered obsolete or severely broken by work that is merged while the changes were waiting to be approved or applied.
+  \item \textbf{Workflow in use:} Is it centralized, with each developer having equal write access to the main code line? Does the project have a maintainer or integration manager who checks all the patches? Are all the patches peer-reviewed and approved? Are you involved in that process? Is a lieutenant system in place, and do you have to submit your work to them first?
+  \item \textbf{Commit access:} The workflow required in order to contribute to a project is much different if developers have write access to the project than if they do not. If you don’t have write access, how does the project prefer to accept contributed work? Does it even have a policy? How much work are you contributing at a time? How often do you contribute?
 \end{enumerate}
 
 All these questions can affect how you contribute effectively to a project and what workflows are preferred or available to you. I’ll cover aspects of each of these in a series of use cases, moving from simple to more complex; you should be able to construct the specific workflows you need in practice from these examples.
