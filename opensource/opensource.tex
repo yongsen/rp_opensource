@@ -114,7 +114,7 @@ It may spend as much time debugging as coding for programmers, so they need to l
 
 As is presented in \cite{kernighan1999practice}, the bugs can be divided into three kinds, i.e., easy bugs in good clues, hard bugs in bad clues and non-reproducible bugs. Developers can adopt different methods to debug it based on the bugs types.
 
-Once a bug has been seen, the first thing to do is to think about the clues it presents. Check about if it is something familiar or just because something is just changed in the program. A few test lines and a few display statements in the code may be enough to resolve it. If there are no good clues, try to cut down the input data to make a small input that fails. Another method is cutting out code to eliminate regions that can not be related. It is also possible to insert checking code that gets turned on only after the program has executed some number of steps, again to try to localize the problem. Furthermore, try to use debugger tools to check for memory leaks, array bounds violations, suspect code.
+Once a bug has been seen, the first thing to do is to think about the clues it presents. Check about if it is something familiar or just because something is just changed in the program. A few test lines and a few display statements in the code may be enough to resolve it. If there are no good clues, try to cut down the input data to make a small input that fails. Another method is cutting out code to eliminate regions that can not be related. It is also possible to insert checking code that gets turned on only after the program has executed some number of steps, again to try to localize the problem. Furthermore, breakpoints and stepping make it possible to rerun a failing program one step at a time to find the first place where something goes wrong. Try to use debugger tools to check for memory leaks, array bounds violations, suspect code.
 
 \begin{enumerate}
   \item \textbf{Good Clues, Easy Bugs:} When some bugs occur, first think backwards to discover the reasons. Once we have a full explanation, we'll know what to fix and discover other things.
@@ -141,21 +141,23 @@ Once a bug has been seen, the first thing to do is to think about the clues it p
       \begin{itemize}
         \item Check whether all variables have been initialized. Local variables of functions and memory obtained from allocators are the most likely culprits in C and C++.
         \item If the bug changes or even disappears when debugging code is added, it may be a memory allocation error. The bug is outside of allocated memory, and the addition of debugging code changes the layout of storage enough to change the effect of the bug.
-        \item If the crash site seems far away from anything that could be wrong, the most likely problem is overwriting memory by storing into a memory location that isn't used later.
+        \item If the crash seems far away from anything that could be wrong, the most likely problem is overwriting memory by storing into a memory location that is not used later.
       \end{itemize}
 \end{enumerate}
 
+In summary, debugging is hard and can take long and unpredictable amounts of time, so the goal is to avoid having to do much of it. Techniques that help reduce debugging time include good design, good style, boundary condition tests, assertions and sanity checks in the code, defensive programming, well designed interfaces, limited global data, and checking tools. On the other hand, some features are prone to error under certain cases, like \textit{goto} statements, global variables, unrestricted pointers, and automatic type conversions. Programmers should know the potentially risky bits of their languages and take extra care when using them. They should also enable all compiler checks and heed the warnings.
+
+%It's usually easy to find out where the program was executing when it died, examine the sequence of functions that were active, and display the values of local and global variables. That much information may be sufficient to identify a bug. If not, breakpoints and stepping make it possible to re-run a failing program one step at a time to find the first place where something goes wrong.
+
 \subsection{Functional Debugging}
-
-Debugging is hard and can take long and unpredictable amounts of time, so the goal is to avoid having to do much of it. Techniques that help reduce debugging time include good design, good style, boundary condition tests, assertions and sanity checks in the code, defensive programming, well-designed interfaces, limited global data, and checking tools. On the other hand, some features are prone to error under certain cases, like \textit{goto} statements, global variables, unrestricted pointers, and automatic type conversions. Programmers should know the potentially risky bits of their languages and take extra care when using them. They should also enable all compiler checks and heed the warnings.
-
-It's usually easy to find out where the program was executing when it died, examine the sequence of functions that were active, and display the values of local and global variables. That much information may be sufficient to identify a bug. If not, breakpoints and stepping make it possible to re-run a failing program one step at a time to find the first place where something goes wrong.
+In FMDD domain engineers first construct a functional model that describes the system, then code is generated from this model. A
+functional debugger is a tool for locating errors in functional models. Such a tool should help the domain engineer understand erroneous behavior in terms of the functional model.
 
 \begin{enumerate}
   \item Try to use other stable software to make sure the hardware, devices, operating system and software are in good condition.
   \item Examine carefully about which part is responsible for the bug, especially the code that changed most recently, to determine whether the bug is caused by the configuration of hardware, device, operating system or software.
   \item When a program works for one person but fails for another, something must depend on the external environment. This might include files read by the program, file permissions, environment variables, search path for commands, defaults, or startup files.
-  \item
+  \item Show the intermediate variable if necessary.
 \end{enumerate}
 Once you have found and fixed a bug, make sure that you eliminate other bugs that might be similar. Think about what happened so you can avoid making that kind of mistake again.
 
@@ -163,8 +165,10 @@ Once you have found and fixed a bug, make sure that you eliminate other bugs tha
 
 %How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
 
+There are two important factors for a successful open source project: a widely accepted leadership setting the project guidelines and driving the decision process, and an effective coordination mechanism among the developers based on shared communication protocols \cite{Bonaccorsi20031243}. The leadership deeply influences the evolution of the project by selecting the best fitting solution among the ones that different contributors propose for the same problem. The coordination mechanism shared by developers is in most cases able to produce a well structured flow of contributions. In Git, the contributing and maintaining are carried out by the concept of branching. Some people refer to the branching model in Git as its “killer feature”, and it certainly sets Git apart in the otner vision control system community \cite{chacon2009pro}.
+
 \subsection{Branching}
-Branching means developers diverge from the main line of development and continue to do work without messing with that main line. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast. A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. When the commits are initially made, a master branch will point to the last commit. If new commit is add, the pointer will move forward automatically. The branching is generally composed of the following procedures:
+Branching means developers can diverge from the main line of development and continue to do work without messing with that main line. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast. A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. When the commits are initially made, a master branch will point to the last commit. If new commit is add, the pointer will move forward automatically. The branching is generally composed of the following procedures:
 
 \begin{enumerate}
 \item \textbf{Creating:} To create a branch and switch to it at the same time:
@@ -189,15 +193,15 @@ Then do the following work in the branch:
   git checkout master
   git merge example
 \end{verbatim}
-\item \textbf{Handling Conflicts:} Occasionally, this process does not go smoothly. If the same part of the same file differently in the two branches that will be merged together is changed, Git will not be able to merge them cleanly. Then there will be a merge conflict information. The conflict can be handled by manual or other tools.
+\item \textbf{Handling Conflicts:} If the same part of the same file differently in the two branches that will be merged together is changed, Git will not be able to merge them cleanly. Then there will be a merge conflict information. The conflict can be handled by manual or other tools.
   \begin{enumerate}
     \item Manual: Git adds standard conflict-resolution markers to the files that have conflicts, so open them manually and resolve those conflicts.
     \item Tools: Git also provides graphical tools to resolve these issues, which fires up an appropriate visual merge tool handle the conflicts:
-  \end{enumerate}
 \begin{verbatim}
   git mergetool
 \end{verbatim}
-It has paused the process while the conflict is under resolving. To see which files are unmerged at any point after a merge conflict, run git status:
+  \end{enumerate}
+It has paused the process while the conflict is under resolving. To see which files are unmerged at any point after a merge conflict:
 \begin{verbatim}
   git status
 \end{verbatim}
@@ -228,15 +232,7 @@ It has paused the process while the conflict is under resolving. To see which fi
 %  \end{itemize}
 %
 \subsection{Contributing}
-When developers want to share a branch with the world, they need to push it up to a remote one that have write access to. The local branches are not automatically synchronized to the remote servers. Also, developers can use private branches for work if they do not want to share, and push up only the topic branches that they want to collaborate on. Because Git is very flexible, people can and do work together many ways. It is problematic to describe how to contribute to a project, since every project is a bit different. Some of the variables involved are active contributor size, chosen workflow, commit access, and possibly the external contribution method.
-\begin{itemize}
-  \item \textbf{Active contributor size:} This is important because with more developers, the project will run into more issues. The submitted changes may be rendered obsolete or severely broken by work that is merged while the changes were waiting to be approved or applied.
-  \item \textbf{Workflow in use:} If it is centralized that each developer having equal write access to the main code line, or the project have a maintainer or integration manager who checks all the patches, the maintenance of workflow is more easy.
-  \item \textbf{Commit access:} The workflow required in order to contribute to a project is much different if developers have write access to the project than if they do not.
-\end{itemize}
-
-All these questions can affect how you contribute effectively to a project and what workflows are preferred or available to developers. There are several common patterns for contributing to a project, and there are a huge number of variations on how it’s done. In general, this can be described as follows:
-
+When developers want to share a branch with the world, they need to push it up to a remote one that have write access to. The local branches are not automatically synchronized to the remote servers. Also, developers can use private branches for work if they do not want to share, and push up only the topic branches that they want to collaborate on. In general, this can be described as follows:
 \begin{enumerate}
   \item Developers generate and send patches via E-mail
     \begin{itemize}
@@ -254,39 +250,36 @@ All these questions can affect how you contribute effectively to a project and w
       \item Initiated by upstream maintainers
     \end{itemize}
   \end{enumerate}
+  
+ Because Git is very flexible, people can and do work together many ways. It is problematic to describe how to contribute to a project, since every project is a bit different. Some of the variables involved are active contributor size, chosen workflow, commit access, and possibly the external contribution method.
+\begin{itemize}
+  \item \textbf{Active contributor size:} This is important because with more developers, the project will run into more issues. The submitted changes may be rendered obsolete or severely broken by work that is merged while the changes were waiting to be approved or applied.
+  \item \textbf{Workflow in use:} If it is centralized that each developer having equal write access to the main code line, or the project have a maintainer or integration manager who checks all the patches, the maintenance of workflow is more easy.
+  \item \textbf{Commit access:} The workflow required in order to contribute to a project is much different if developers have write access to the project than if they do not.
+\end{itemize}
 
+All these questions can affect how you contribute effectively to a project and what workflows are preferred or available to developers. There are several common patterns for contributing to a project, and there are a huge number of variations on how it’s done.
 \subsection{Maintaining}
-In addition to knowing how to effectively contribute to a project, developers need to know how to maintain one. This can be consist of accepting and applying patches generated via patch and E-mail, or integrating changes in remote branches for repositories that have been added as remotes to the project. Whether developers maintain a canonical repository or want to help by verifying or approving patches, they need to know how to accept work in a way that is clearest for other contributors and sustainable over the long run.
+The open source project maintaining can be consist of accepting and applying patches generated via patch and E-mail, or integrating changes in remote branches for repositories that have been added as remotes to the project. Whether developers maintain a canonical repository or want to help by verifying or approving patches, they need to know how to accept work in a way that is clearest for other contributors and sustainable over the long run.
 \begin{enumerate}
   \item \textit{Working in Topic Branches:} When developers are thinking of integrating new work, it’s generally a good idea to try it out in a topic branch, i.e., a temporary branch specifically made to try out that new work. It is easy to tweak a patch individually and leave it if it is not working until developers have time to come back to it.
   \item \textit{Applying Patches from E-mail:} If a patch is received over e-mail that need to be integrated into the project, maintainers need to apply the patch in the topic branch to evaluate it. There are two ways to apply an e-mailed patch: with \texttt{git apply} or \texttt{git am}.
-  \item \textit{Checking Out Remote Branches:} If the contribution came from a Git user who set up their own repository, pushed a number of changes into it, and then sent the URL to the repository and the name of the remote branch the changes are in, maintainers can add them as a remote and do merges locally.
-  \item \textit{Determining What Is Introduced:} Now there is a topic branch that contains contributed work, maintainers can determine what to do. They should use the right commands to review exactly what should be introduced if the patch is merged into the main branch.
+  \item \textit{Checking Out Remote Branches:} If the contribution came from a Git user who set up their own repository, pushed a number of changes into it, and then sent the URL to the repository, maintainers can add them as a remote and do merges locally.
+  \item \textit{Determining What Is Introduced:} Now there is a topic branch that contains contributed work, maintainers should use the right commands to review exactly what should be introduced if the patch is merged into the main branch.
   \item \textit{Integrating Contributed Work:} If all the work in the topic branch is ready to be integrated into a more mainline one, determine the workflow that can be used to maintain the project.
   \item \textit{Tagging Your Releases:} When developers have decided to cut a release, they will probably want to drop a tag so that the release can be recreated at any point going forward.
-  \item \textit{Generating a Build Number:} Git does not have monotonically increasing numbers or the equivalent to go with each commit. If developers want to have a human-readable name to go with a commit, they can run \texttt{git describe} on that commit.
+  \item \textit{Generating a Build Number:} If developers want to have a human-readable name to go with a commit, they can run \texttt{git describe} on that commit.
   \item \textit{Preparing a Release:} When developers want to release a build, one thing is to create an archive of the latest snapshot of the code for those poor souls who do not use Git.
   \item \textit{The Shortlog:} It is time to e-mail the mailing list of people who want to know what is happening in the project. A nice way of quickly getting a sort of changelog of what has been added since the last release or e-mail is to use the \texttt{git shortlog} command.
 \end{enumerate}
 
 \section{Cloud Programming}
-
-\begin{enumerate}
-  \item Connect the debug to Git
-  \item Teaching system
-  \item Cloud programming, computing, networking
-\end{enumerate}
-
-\url{http://www.codeproject.com/Articles/250543/Cloud-Programming-Concepts}
-
-\href{http://www.ted.com/talks/aaron_koblin.html}{Aaron Koblin: Artfully visualizing our humanity}
-
-\href{http://www.mpt.net.nz/2012/06/why-free-software-has-poor-usability/}{Why free software has poor usability, and how to improve it}
+A cloud programming system should include the editing, debugging, testing, running procedures. In the lower layer, it can record the state of debugging, which means the editing (say vi, Emacs) and debugging (say GDB, Code::Blocks) tools should be connected to the vision control system (say Git). In the upper layer, it should provide feedback information, which indicates it can make adaption according to the state of developers (say commits, code) and users (say QoS, traffic loads).
 
 \subsection{Multi-stage Connecting}
-
+Today’s cloud interfaces are convenient for launching multiple independent instances of traditional single-node services, but writing truly distributed software remains a significant challenge. Distributed applications still require a developer to orchestrate concurrent computation and communication across machines, in a manner that is robust to delays and failures. Writing and debugging such code is difficult even for experienced infrastructure programmers, and drives away many creative software designers who might otherwise have innovative uses for cloud computing platforms.
 \subsection{Context-aware Modeling}
-
+Git is a vision control system, which is designed for general open source software development. It provides a platform for different kinds of software including Linux kernel, wireless driver, Web browser, etc. However, for some specific applications.
 
 \begin{enumerate}
   \item individuals
@@ -307,6 +300,17 @@ In addition to knowing how to effectively contribute to a project, developers ne
   \item acquire: software, individuals, groups
 \end{enumerate}
 
+\begin{enumerate}
+  \item Connect the debug to Git
+  \item Teaching system
+  \item Cloud programming, computing, networking
+\end{enumerate}
+
+\url{http://www.codeproject.com/Articles/250543/Cloud-Programming-Concepts}
+
+\href{http://www.ted.com/talks/aaron_koblin.html}{Aaron Koblin: Artfully visualizing our humanity}
+
+\href{http://www.mpt.net.nz/2012/06/why-free-software-has-poor-usability/}{Why free software has poor usability, and how to improve it}
 
 \nocite{Bonaccorsi20031243}
 \nocite{chacon2009pro}
