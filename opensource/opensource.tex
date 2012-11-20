@@ -155,7 +155,7 @@ It's usually easy to find out where the program was executing when it died, exam
   \item Try to use other stable software to make sure the hardware, devices, operating system and software are in good condition.
   \item Examine carefully about which part is responsible for the bug, especially the code that changed most recently, to determine whether the bug is caused by the configuration of hardware, device, operating system or software.
   \item When a program works for one person but fails for another, something must depend on the external environment. This might include files read by the program, file permissions, environment variables, search path for commands, defaults, or startup files.
-  \item 
+  \item
 \end{enumerate}
 Once you have found and fixed a bug, make sure that you eliminate other bugs that might be similar. Think about what happened so you can avoid making that kind of mistake again.
 
@@ -164,7 +164,7 @@ Once you have found and fixed a bug, make sure that you eliminate other bugs tha
 %How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
 
 \subsection{Branching}
-Branching means developers diverge from the main line of development and continue to do work without messing with that main line. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast. A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. When the commits are initially made, a master branch will point to the last commit. If new commit is add, the pointer will move forward automatically.
+Branching means developers diverge from the main line of development and continue to do work without messing with that main line. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast. A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. When the commits are initially made, a master branch will point to the last commit. If new commit is add, the pointer will move forward automatically. The branching is generally composed of the following procedures:
 
 \begin{enumerate}
 \item \textbf{Creating:} To create a branch and switch to it at the same time:
@@ -193,7 +193,7 @@ Then do the following work in the branch:
   \begin{enumerate}
     \item Manual: Git adds standard conflict-resolution markers to the files that have conflicts, so open them manually and resolve those conflicts.
     \item Tools: Git also provides graphical tools to resolve these issues, which fires up an appropriate visual merge tool handle the conflicts:
-  \end{enumerate} 
+  \end{enumerate}
 \begin{verbatim}
   git mergetool
 \end{verbatim}
@@ -226,60 +226,56 @@ It has paused the process while the conflict is under resolving. To see which fi
 %    \item squashed commits
 %    \item cherry picking
 %  \end{itemize}
-%  
+%
 \subsection{Contributing}
-When developers want to share a branch with the world, they need to push it up to a remote one that have write access to. The local branches are not automatically synchronized to the remote servers. Also, developers can use private branches for work if they do not want to share, and push up only the topic branches that they want to collaborate on.
-
-Because Git is very flexible, people can and do work together many ways. It is problematic to describe how to contribute to a project, since every project is a bit different. Some of the variables involved are active contributor size, chosen workflow, commit access, and possibly the external contribution method.
-\begin{enumerate}
-  \item \textbf{Active contributor size:} This is important because with more and more developers, the project will run into more issues making sure the code applied cleanly or merged easily. The submitted changes may be rendered obsolete or severely broken by work that is merged while the changes were waiting to be approved or applied.
-  \item \textbf{Workflow in use:} Is it centralized, with each developer having equal write access to the main code line? Does the project have a maintainer or integration manager who checks all the patches? Are all the patches peer-reviewed and approved? Are you involved in that process? Is a lieutenant system in place, and do you have to submit your work to them first?
-  \item \textbf{Commit access:} The workflow required in order to contribute to a project is much different if developers have write access to the project than if they do not. If you don’t have write access, how does the project prefer to accept contributed work? Does it even have a policy? How much work are you contributing at a time? How often do you contribute?
-\end{enumerate}
-
-All these questions can affect how you contribute effectively to a project and what workflows are preferred or available to you. I’ll cover aspects of each of these in a series of use cases, moving from simple to more complex; you should be able to construct the specific workflows you need in practice from these examples.
-
+When developers want to share a branch with the world, they need to push it up to a remote one that have write access to. The local branches are not automatically synchronized to the remote servers. Also, developers can use private branches for work if they do not want to share, and push up only the topic branches that they want to collaborate on. Because Git is very flexible, people can and do work together many ways. It is problematic to describe how to contribute to a project, since every project is a bit different. Some of the variables involved are active contributor size, chosen workflow, commit access, and possibly the external contribution method.
 \begin{itemize}
-  \item Generate and send patches via email
-    \begin{itemize}
-      \item Most developers send patches to a maintainer or list
-      \item Highly visible public review of patches on mail list
-    \end{itemize}
-\item Maintainer pulls updates from a downstream developer
-    \begin{itemize}
-      \item Maintainer can directly pull from your published repository
-      \item Initiated by upstream maintainer
-    \end{itemize}
-  \item Developer pushes updates to an upstream maintainer
-    \begin{itemize}
-      \item Some developers have write permissions on an upstream repository
-      \item Initiated by downstream developer
-    \end{itemize}
+  \item \textbf{Active contributor size:} This is important because with more developers, the project will run into more issues. The submitted changes may be rendered obsolete or severely broken by work that is merged while the changes were waiting to be approved or applied.
+  \item \textbf{Workflow in use:} If it is centralized that each developer having equal write access to the main code line, or the project have a maintainer or integration manager who checks all the patches, the maintenance of workflow is more easy.
+  \item \textbf{Commit access:} The workflow required in order to contribute to a project is much different if developers have write access to the project than if they do not.
 \end{itemize}
 
+All these questions can affect how you contribute effectively to a project and what workflows are preferred or available to developers. There are several common patterns for contributing to a project, and there are a huge number of variations on how it’s done. In general, this can be described as follows:
+
+\begin{enumerate}
+  \item Developers generate and send patches via E-mail
+    \begin{itemize}
+      \item Most developers send patches to a maintainer or mailing list
+      \item Highly visible public review of patches on mailing list
+    \end{itemize}
+\item Developers push updates to an upstream maintainer
+    \begin{itemize}
+      \item Some developers have write permissions on an upstream repository
+      \item Initiated by downstream developers
+    \end{itemize}
+  \item Maintainers pull updates from a downstream developer
+    \begin{itemize}
+      \item Maintainers can directly pull from the published repository
+      \item Initiated by upstream maintainers
+    \end{itemize}
+  \end{enumerate}
+
 \subsection{Maintaining}
-In addition to knowing how to effectively contribute to a project, you’ll likely need to know how to maintain one. This can consist of accepting and applying patches generated via format-patch and e-mailed to you, or integrating changes in remote branches for repositories you’ve added as remotes to your project. Whether you maintain a canonical repository or want to help by verifying or approving patches, you need to know how to accept work in a way that is clearest for other contributors and sustainable by you over the long run.
+In addition to knowing how to effectively contribute to a project, developers need to know how to maintain one. This can be consist of accepting and applying patches generated via patch and E-mail, or integrating changes in remote branches for repositories that have been added as remotes to the project. Whether developers maintain a canonical repository or want to help by verifying or approving patches, they need to know how to accept work in a way that is clearest for other contributors and sustainable over the long run.
 \begin{enumerate}
-  \item Working in Topic Branches: When you’re thinking of integrating new work, it’s generally a good idea to try it out in a topic branch — a temporary branch specifically made to try out that new work. This way, it’s easy to tweak a patch individually and leave it if it’s not working until you have time to come back to it.
-  \item Applying Patches from E-mail: If you receive a patch over e-mail that you need to integrate into your project, you need to apply the patch in your topic branch to evaluate it. There are two ways to apply an e-mailed patch: with \textit{git apply} or with \textit{git am}.
-  \item Checking Out Remote Branches: If your contribution came from a Git user who set up their own repository, pushed a number of changes into it, and then sent you the URL to the repository and the name of the remote branch the changes are in, you can add them as a remote and do merges locally.
-  \item Determining What Is Introduced: Now you have a topic branch that contains contributed work. At this point, you can determine what you’d like to do with it. This section revisits a couple of commands so you can see how you can use them to review exactly what you’ll be introducing if you merge this into your main branch.
-  \item Integrating Contributed Work: When all the work in your topic branch is ready to be integrated into a more mainline branch, the question is how to do it. Furthermore, what overall workflow do you want to use to maintain your project? You have a number of choices, so I’ll cover a few of them.
-  \item Tagging Your Releases: When you’ve decided to cut a release, you’ll probably want to drop a tag so you can re-create that release at any point going forward.
-  \item Generating a Build Number: Because Git doesn’t have monotonically increasing numbers like ‘v123’ or the equivalent to go with each commit, if you want to have a human-readable name to go with a commit, you can run git describe on that commit.
-  \item Preparing a Release: Now you want to release a build. One of the things you’ll want to do is create an archive of the latest snapshot of your code for those poor souls who don’t use Git.
-  \item The Shortlog: It’s time to e-mail your mailing list of people who want to know what’s happening in your project. A nice way of quickly getting a sort of changelog of what has been added to your project since your last release or e-mail is to use the git shortlog command.
+  \item \textit{Working in Topic Branches:} When developers are thinking of integrating new work, it’s generally a good idea to try it out in a topic branch, i.e., a temporary branch specifically made to try out that new work. It is easy to tweak a patch individually and leave it if it is not working until developers have time to come back to it.
+  \item \textit{Applying Patches from E-mail:} If a patch is received over e-mail that need to be integrated into the project, maintainers need to apply the patch in the topic branch to evaluate it. There are two ways to apply an e-mailed patch: with \texttt{git apply} or \texttt{git am}.
+  \item \textit{Checking Out Remote Branches:} If the contribution came from a Git user who set up their own repository, pushed a number of changes into it, and then sent the URL to the repository and the name of the remote branch the changes are in, maintainers can add them as a remote and do merges locally.
+  \item \textit{Determining What Is Introduced:} Now there is a topic branch that contains contributed work, maintainers can determine what to do. They should use the right commands to review exactly what should be introduced if the patch is merged into the main branch.
+  \item \textit{Integrating Contributed Work:} If all the work in the topic branch is ready to be integrated into a more mainline one, determine the workflow that can be used to maintain the project.
+  \item \textit{Tagging Your Releases:} When developers have decided to cut a release, they will probably want to drop a tag so that the release can be recreated at any point going forward.
+  \item \textit{Generating a Build Number:} Git does not have monotonically increasing numbers or the equivalent to go with each commit. If developers want to have a human-readable name to go with a commit, they can run \texttt{git describe} on that commit.
+  \item \textit{Preparing a Release:} When developers want to release a build, one thing is to create an archive of the latest snapshot of the code for those poor souls who do not use Git.
+  \item \textit{The Shortlog:} It is time to e-mail the mailing list of people who want to know what is happening in the project. A nice way of quickly getting a sort of changelog of what has been added since the last release or e-mail is to use the \texttt{git shortlog} command.
 \end{enumerate}
-
-\subsection{Other Issues}
-\begin{enumerate}
-  \item \textbf{Pushing:} When you want to share a branch with the world, you need to push it up to a remote that you have write access to. Your local branches aren’t automatically synchronized to the remotes you write to — you have to explicitly push the branches you want to share. That way, you can use private branches for work you don’t want to share, and push up only the topic branches you want to collaborate on.
-  \item \textbf{Tracking:} Checking out a local branch from a remote branch automatically creates what is called a tracking branch. Tracking branches are local branches that have a direct relationship to a remote branch. If you’re on a tracking branch and type git push, Git automatically knows which server and branch to push to. Also, running git pull while on one of these branches fetches all the remote references and then automatically merges in the corresponding remote branch.
-  \item \textbf{Rebasing:} In Git, there are two main ways to integrate changes from one branch into another: the merge and the rebase.
-\end{enumerate}
-
 
 \section{Cloud Programming}
+
+\begin{enumerate}
+  \item Connect the debug to Git
+  \item Teaching system
+  \item Cloud programming, computing, networking
+\end{enumerate}
 
 \href{http://www.ted.com/talks/aaron_koblin.html}{Aaron Koblin: Artfully visualizing our humanity}
 
