@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{Alvaro:2010:BAE:1755913.1755937}
+P.~Alvaro, T.~Condie, N.~Conway, K.~Elmeleegy, J.~M. Hellerstein, and R.~Sears.
+\newblock Boom analytics: exploring data-centric, declarative programming for
+  the cloud.
+\newblock EuroSys '10, pages 223--236, New York, NY, USA, 2010. ACM.
+
 \bibitem{Bonaccorsi20031243}
 A.~Bonaccorsi and C.~Rossi.
 \newblock Why open source software can succeed.
