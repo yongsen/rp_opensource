@@ -21,23 +21,20 @@ B.~Kernighan and R.~Pike.
 \newblock {\em The practice of programming}.
 \newblock Addison-Wesley Professional, 1999.
 
+\bibitem{Koblin}
+A.~Koblin.
+\newblock Artfully visualizing our humanity.
+\newblock \url{http://www.ted.com/talks/aaron_koblin.html}.
+
+\bibitem{vonKrogh20031149}
+G.~Krogh and E.~Hippel.
+\newblock Special issue on open source software development.
+\newblock {\em Research Policy}, 32(7):1149 -- 1157, 2003.
+
 \bibitem{scacchi2006understanding}
 W.~Scacchi, J.~Feller, B.~Fitzgerald, S.~Hissam, and K.~Lakhani.
 \newblock Understanding free/open source software development processes.
 \newblock {\em Software Process: Improvement and Practice}, 11(2):95--105,
   2006.
-
-\bibitem{vonKrogh20031149}
-G.~von Krogh and E.~von Hippel.
-\newblock Special issue on open source software development.
-\newblock {\em Research Policy}, 32(7):1149 -- 1157, 2003.
-
-\bibitem{Yilmaz06techniquesand}
-C.~Yilmaz, A.~M. Memon, A.~Porter, A.~S. Krishna, D.~C. Schmidt, and
-  A.~Gokhale.
-\newblock Techniques and processes for improving the quality and performance of
-  open-source software.
-\newblock In {\em Software Process: Improvement and Practice}. John Wiley \&
-  Sons, 2006.
 
 \end{thebibliography}

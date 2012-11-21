@@ -274,7 +274,7 @@ The open source project maintaining can be consist of accepting and applying pat
 
 \section{Cloud Programming}
 
-Today’s cloud interfaces are convenient for launching multiple independent instances of traditional single-node services, but writing truly distributed software remains a significant challenge. Distributed applications still require a developer to orchestrate concurrent computation and communication across machines, in a manner that is robust to delays and failures. Writing and debugging such code is difficult even for experienced infrastructure programmers, and drives away many creative software designers who might otherwise have innovative uses for cloud computing platforms \cite{Alvaro:2010:BAE:1755913.1755937}.
+The cloud interfaces are convenient for launching multiple independent instances of traditional single-node services, but writing truly distributed software remains a significant challenge. Distributed applications still require a developer to orchestrate concurrent computation and communication across machines, in a manner that is robust to delays and failures. Writing and debugging such code is difficult even for experienced infrastructure programmers, and drives away many creative software designers who might otherwise have innovative uses for cloud computing platforms \cite{Alvaro:2010:BAE:1755913.1755937}.
 
 A cloud programming system should include the editing, debugging, testing, running procedures. In the lower layer, it can record the state of debugging, which means the editing (say vi, Emacs) and debugging (say GDB, Code::Blocks) tools should be connected to the vision control system (say Git). In the upper layer, it should provide feedback information, which indicates it can make adaption according to the state of developers (say commits, code) and end users' requirements (say QoS, traffic loads).
 
@@ -288,7 +288,7 @@ Git is more likely a vision control system, which is not connected to the progra
 \end{enumerate}
 
 \subsection{Process Modeling}
-Git is a vision control system, which is designed for general open source software development. It provides a platform for different kinds of software. However, it should be specially designed for some specific applications. Most repositories on Github are related to web applications, e.g. html5-boilerplate, rails, bootstrap, etc; or written in high-level languages e.g. JavaScript, Ruby, etc. On the other hand, other projects mainly focus on operating system or debugging environment, e.g. Linux kernel, Eclipse, etc; or written in low-level languages, e.g. C, C++, Java, etc. It means that the programming languages, cooperation mechanisms and target end users of different projects are highly heterogeneous. If the communication patterns, contribution levels, evaluation speed and user needs are classified and modeled, it can help to improve the efficiency according to the specify requirements and characters of the open source software development.
+Git is a vision control system, which is designed for general open source software development. However, some functions should be tailored for some specific applications. The most popular repositories on Github are web applications, e.g., html5-boilerplate, rails, bootstrap; or written in high-level languages, e.g., JavaScript, Ruby. On the other hand, other projects mainly focus on operating system or debugging environment, e.g., Linux kernel, Eclipse; or written in low-level languages, e.g., C, C++, Java. It means that the programming languages, cooperation mechanisms and target end users of different projects are highly heterogeneous. If the communication patterns, contribution levels, evaluation speed and user needs are classified and modeled, it can help to improve the efficiency according to the specify requirements and characters. For example, a teaching system for programming classes should be centralized so that assignments can be made. The commits and bugging trace of every students can be issued effectively. Furthermore, some work should be done by group that certain individuals should be connected with each other. So it is something like a mesh topology in wireless network.
 %
 %\begin{enumerate}
 %  \item communication: software, individuals, groups
@@ -298,9 +298,7 @@ Git is a vision control system, which is designed for general open source softwa
 %  \item developer: individuals, groups, organizations, hackers
 %\end{enumerate}
 
-\subsection{Programming, Computing and Networking}
-
-The open source software development platform is self-organized, and the participating and contributing are usually motivated by the developers' own interest. Some are interested in the software engineering, while others may focus on wireless networking. So many problems are solved from certain perspectives but not the same case from another aspect. For example, the weighted sequence of \{1/2,1/4,1/8,1/16\} is more effective than \{1/3,1/6,1/9,1/12\} in exponentially weighted moving average. A cloud programming system should provide a platform for the communication and cooperation of programming, computing and networking in system level.
+On the other hand, the open source platform is self-organized, and the participating and contributing are usually motivated by the developers' own interest. Some are interested in the software engineering, while others may focus on wireless networking. So many problems are solved from certain perspectives but not the same case from another aspect. For example, the weighted sequence of \{1/2,1/4,1/8,1/16\} is more effective than \{1/3,1/6,1/9,1/12\} in exponentially weighted moving average from the programming perspective. A cloud programming system should provide a platform for the communication and cooperation of programming, computing and networking in system level.
 
 %\url{http://www.codeproject.com/Articles/250543/Cloud-Programming-Concepts}
 %
@@ -315,8 +313,10 @@ The open source software development platform is self-organized, and the partici
 %\nocite{Kogut01062001}
 \nocite{scacchi2006understanding}
 \nocite{vonKrogh20031149}
-\nocite{Yilmaz06techniquesand}
-
+%\nocite{Yilmaz06techniquesand}
+%\nocite{Julia}
+\nocite{Koblin}
+%\nocite{Senthilvel}
 
 \renewcommand\refname{References}
 \bibliographystyle{abbrv}

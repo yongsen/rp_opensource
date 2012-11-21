@@ -1,10 +1,19 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.19)  21 NOV 2012 15:05
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.29)  21 NOV 2012 22:15
 entering extended mode
 **opensource.tex
-(D:\Cloud\Github\rp_opensource\opensource\opensource.tex
+(E:\Github\rp_opensource\opensource\opensource.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for loaded.
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\ieeetran\IEEEtran.cls"
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+("C:\Program Files\CTEX\MiKTeX\tex\latex\ieeetran\IEEEtran.cls"
 Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -15,7 +24,7 @@ Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 366.
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -84,31 +93,31 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEtmpitemindent=\dimen116
 \c@IEEEbiography=\count90
 \@IEEEtranrubishbin=\box26
-) ("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty"
+) ("C:\Program Files\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\graphics\keyval.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\graphics\graphics.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\graphics\trig.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
@@ -116,7 +125,7 @@ Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen117
 \Gin@req@width=\dimen118
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\tools\bm.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\tools\bm.sty"
 Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup4
 \symboldletters=\mathgroup5
@@ -124,13 +133,13 @@ Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
 LaTeX Info: Redefining \bm on input line 204.
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\hyperref\hyperref.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2012/02/06 v6.82o Hypertext links for LaTeX
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-hyperref.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2011/04/23 v1.4 Bundle oberdiek, subset hyperref (HO)
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-generic.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2011/04/23 v1.4 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2011/04/23 v1.4 Subsetting bundle oberdiek (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -167,22 +176,23 @@ Package: atveryend 2011/04/23 v1.7 Hooks at very end of document (HO)
 Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
 Package: refcount 2010/12/01 v3.2 Data extraction from references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options of hyperref/bookmark (HO)
-) ("C:\Program Files (x86)\CTEX\MiKTeX\tex\generic\ifxetex\ifxetex.sty"
+)
+("C:\Program Files\CTEX\MiKTeX\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\oberdiek\kvoptions.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
 )
 \@linkdim=\dimen119
 \Hy@linkcounter=\count92
 \Hy@pagecounter=\count93
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\hyperref\pd1enc.def"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2012/02/06 v6.82o Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count94
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\00miktex\hyperref.cfg"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `bookmarks' set `true' on input line 3925.
@@ -196,7 +206,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4284.
 \c@Hy@tempcnt=\count95
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\ltxmisc\url.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
@@ -220,35 +230,35 @@ LaTeX Info: Redefining \pageref on input line 5831.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\hyperref\hpdftex.def"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2012/02/06 v6.82o Hyperref driver for pdfTeX
 \Fld@listcount=\count100
 \c@bookmark@seq@number=\count101
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\oberdiek\rerunfilecheck.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip44
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\oberdiek\bookmark.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\oberdiek\bookmark.sty"
 Package: bookmark 2011/04/21 v1.21 PDF bookmarks (HO)
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\oberdiek\auxhook.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\oberdiek\bkm-pdftex.def"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\oberdiek\bkm-pdftex.def"
 File: bkm-pdftex.def 2011/04/21 v1.21 bookmark driver for pdfTeX (HO)
 \BKM@id=\count102
 ))
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty"
 Package: algpseudocode 
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\base\ifthen.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty"
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
@@ -264,11 +274,11 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip47
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) ("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty"
+) ("C:\Program Files\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty"
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\float\float.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count110
 \float@exts=\toks16
@@ -279,10 +289,10 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@algorithm=\toks18
 \c@algorithm=\count111
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\subfig\subfig.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\subfig\subfig.sty"
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\caption\caption3.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\caption\caption3.sty"
 Package: caption3 2011/11/01 v1.4a caption3 kernel (AR)
 \captionmargin=\dimen122
 \captionmargin@=\dimen123
@@ -307,11 +317,11 @@ Package caption Info: Unknown document class (or package),
 \sf@top=\skip51
 \sf@bottom=\skip52
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\threeparttable\threeparttable.st
-y"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\threeparttable\threeparttable.sty"
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box29
-) ("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\listings\listings.sty"
+)
+("C:\Program Files\CTEX\MiKTeX\tex\latex\listings\listings.sty"
 \lst@mode=\count119
 \lst@gtempboxa=\box30
 \lst@token=\toks19
@@ -325,18 +335,18 @@ Package: threeparttable 2003/06/13  v 3.0
 \lst@lineno=\count124
 \lst@maxwidth=\dimen132
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\listings\lstmisc.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count125
 \lst@skipnumbers=\count126
 \lst@framebox=\box31
 )
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\listings\listings.cfg"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\listings\listings.cfg"
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
 
-(D:\Cloud\Github\rp_opensource\opensource\opensource.aux)
+(E:\Github\rp_opensource\opensource\opensource.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
@@ -352,7 +362,7 @@ LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii"
+("C:\Program Files\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count127
 \scratchdimen=\dimen133
@@ -368,10 +378,10 @@ LaTeX Font Info:    ... okay on input line 18.
 )
 \AtBeginShipoutBox=\box33
 Package hyperref Info: Link coloring OFF on input line 18.
- ("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty"
+ ("C:\Program Files\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\generic\oberdiek\gettitlestring.sty"
+("C:\Program Files\CTEX\MiKTeX\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count133
@@ -383,8 +393,9 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count134
-[1{C:/Program Files (x86)/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{U
-GBK.sfd}}]
+
+[1{C:/Program Files/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sf
+d}}]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
@@ -415,7 +426,7 @@ Missing character: There is no ù in font ptmr7t!
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 174.
 
 
-("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd"
+("C:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Missing character: There is no ‚ in font ptmr7t!
@@ -435,46 +446,47 @@ Missing character: There is no ô in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
+ [10]
+[11]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 301.
 
-[10] [11]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 303.
-
- ("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\psnfss\omsptm.fd"
+ ("C:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 303.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 301.
 
-(D:\Cloud\Github\rp_opensource\opensource\opensource.bbl)
+(E:\Github\rp_opensource\opensource\opensource.bbl
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 27.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 27.
+)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 327.
  [12]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 327.
 
-(D:\Cloud\Github\rp_opensource\opensource\opensource.aux)
+(E:\Github\rp_opensource\opensource\opensource.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 327.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 327.
  ) 
 Here is how much of TeX's memory you used:
- 8501 strings out of 495354
- 131101 string characters out of 3182738
- 214192 words of memory out of 3000000
- 11501 multiletter control sequences out of 15000+200000
- 39116 words of font info for 80 fonts, out of 3000000 for 9000
- 17 hyphenation exceptions out of 8191
- 36i,6n,38p,975b,494s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/Progr
-am Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progra
-m Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program 
-Files (x86)/CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x
-86)/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/CTEX/M
-iKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/CTEX/MiKTeX/font
-s/type1/urw/times/utmri8a.pfb>
-Output written on opensource.pdf (12 pages, 118420 bytes).
+ 8520 strings out of 494045
+ 130628 string characters out of 3148016
+ 215183 words of memory out of 3000000
+ 11635 multiletter control sequences out of 15000+200000
+ 41865 words of font info for 89 fonts, out of 3000000 for 9000
+ 718 hyphenation exceptions out of 8191
+ 36i,6n,38p,1222b,494s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/Program Fil
+es/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/CTEX
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/CTEX/MiKTeX/
+fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/CTEX/MiKTeX/fonts/type1/ur
+w/times/utmb8a.pfb><C:/Program Files/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.p
+fb><C:/Program Files/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on opensource.pdf (12 pages, 117948 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 82 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
