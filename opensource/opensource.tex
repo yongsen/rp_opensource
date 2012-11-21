@@ -150,22 +150,21 @@ In summary, debugging is hard and can take long and unpredictable amounts of tim
 %It's usually easy to find out where the program was executing when it died, examine the sequence of functions that were active, and display the values of local and global variables. That much information may be sufficient to identify a bug. If not, breakpoints and stepping make it possible to re-run a failing program one step at a time to find the first place where something goes wrong.
 
 \subsection{Functional Debugging}
-In FMDD domain engineers first construct a functional model that describes the system, then code is generated from this model. A
-functional debugger is a tool for locating errors in functional models. Such a tool should help the domain engineer understand erroneous behavior in terms of the functional model.
+For a realistic system, engineers first construct a functional model that describes the system, then code is generated from this model. A functional debugger is a tool for locating errors in functional models. Such a tool should help the engineer understand erroneous behavior in terms of the functional model.
 
 \begin{enumerate}
-  \item Try to use other stable software to make sure the hardware, devices, operating system and software are in good condition.
-  \item Examine carefully about which part is responsible for the bug, especially the code that changed most recently, to determine whether the bug is caused by the configuration of hardware, device, operating system or software.
+  \item Try to use other stable software to make sure the hardware, devices, operating system and software are in good condition. Check if the software can work normally on other systems.
+  \item Examine carefully about which part is responsible for the bug, especially the code that changed most recently, to determine whether the bug is caused by the configurations of hardware, device, operating system.
   \item When a program works for one person but fails for another, something must depend on the external environment. This might include files read by the program, file permissions, environment variables, search path for commands, defaults, or startup files.
-  \item Show the intermediate variable if necessary.
+  \item Show the intermediate variables if necessary. Make sure the variables is in consistent with the theory, algorithm and protocol.
+  \item Send bug reports and submissions to the mailing list of the open source project.
 \end{enumerate}
-Once you have found and fixed a bug, make sure that you eliminate other bugs that might be similar. Think about what happened so you can avoid making that kind of mistake again.
 
 \section{Maintaining}
 
 %How are the assignments to individual developers made? How to merge code changes in Git? How are code inconsistency handled? In each step of the process, have you identified any software engineering issues which have rooms for improvements?
 
-There are two important factors for a successful open source project: a widely accepted leadership setting the project guidelines and driving the decision process, and an effective coordination mechanism among the developers based on shared communication protocols \cite{Bonaccorsi20031243}. The leadership deeply influences the evolution of the project by selecting the best fitting solution among the ones that different contributors propose for the same problem. The coordination mechanism shared by developers is in most cases able to produce a well structured flow of contributions. In Git, the contributing and maintaining are carried out by the concept of branching. Some people refer to the branching model in Git as its “killer feature”, and it certainly sets Git apart in the otner vision control system community \cite{chacon2009pro}.
+There are two important factors for a successful open source project: a widely accepted leadership setting the project guidelines and driving the decision process, and an effective coordination mechanism among the developers based on shared communication protocols \cite{Bonaccorsi20031243}. The leadership deeply influences the evolution of the project by selecting the best fitting solution among the ones that different contributors propose for the same problem. The coordination mechanism shared by developers is in most cases able to produce a well structured flow of contributions. In Git, the contributing and maintaining are carried out by the concept of branching. Some people refer to the branching model in Git as its “killer feature”, and it certainly sets Git apart in the other vision control system community \cite{chacon2009pro}.
 
 \subsection{Branching}
 Branching means developers can diverge from the main line of development and continue to do work without messing with that main line. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast. A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. When the commits are initially made, a master branch will point to the last commit. If new commit is add, the pointer will move forward automatically. The branching is generally composed of the following procedures:
@@ -250,7 +249,7 @@ When developers want to share a branch with the world, they need to push it up t
       \item Initiated by upstream maintainers
     \end{itemize}
   \end{enumerate}
-  
+
  Because Git is very flexible, people can and do work together many ways. It is problematic to describe how to contribute to a project, since every project is a bit different. Some of the variables involved are active contributor size, chosen workflow, commit access, and possibly the external contribution method.
 \begin{itemize}
   \item \textbf{Active contributor size:} This is important because with more developers, the project will run into more issues. The submitted changes may be rendered obsolete or severely broken by work that is merged while the changes were waiting to be approved or applied.
@@ -267,61 +266,57 @@ The open source project maintaining can be consist of accepting and applying pat
   \item \textit{Checking Out Remote Branches:} If the contribution came from a Git user who set up their own repository, pushed a number of changes into it, and then sent the URL to the repository, maintainers can add them as a remote and do merges locally.
   \item \textit{Determining What Is Introduced:} Now there is a topic branch that contains contributed work, maintainers should use the right commands to review exactly what should be introduced if the patch is merged into the main branch.
   \item \textit{Integrating Contributed Work:} If all the work in the topic branch is ready to be integrated into a more mainline one, determine the workflow that can be used to maintain the project.
-  \item \textit{Tagging Your Releases:} When developers have decided to cut a release, they will probably want to drop a tag so that the release can be recreated at any point going forward.
+  \item \textit{Tagging the Releases:} When developers have decided to cut a release, they will probably want to drop a tag so that the release can be recreated at any point going forward.
   \item \textit{Generating a Build Number:} If developers want to have a human-readable name to go with a commit, they can run \texttt{git describe} on that commit.
   \item \textit{Preparing a Release:} When developers want to release a build, one thing is to create an archive of the latest snapshot of the code for those poor souls who do not use Git.
   \item \textit{The Shortlog:} It is time to e-mail the mailing list of people who want to know what is happening in the project. A nice way of quickly getting a sort of changelog of what has been added since the last release or e-mail is to use the \texttt{git shortlog} command.
 \end{enumerate}
 
 \section{Cloud Programming}
-A cloud programming system should include the editing, debugging, testing, running procedures. In the lower layer, it can record the state of debugging, which means the editing (say vi, Emacs) and debugging (say GDB, Code::Blocks) tools should be connected to the vision control system (say Git). In the upper layer, it should provide feedback information, which indicates it can make adaption according to the state of developers (say commits, code) and users (say QoS, traffic loads).
 
-\subsection{Multi-stage Connecting}
-Today’s cloud interfaces are convenient for launching multiple independent instances of traditional single-node services, but writing truly distributed software remains a significant challenge. Distributed applications still require a developer to orchestrate concurrent computation and communication across machines, in a manner that is robust to delays and failures. Writing and debugging such code is difficult even for experienced infrastructure programmers, and drives away many creative software designers who might otherwise have innovative uses for cloud computing platforms.
-\subsection{Context-aware Modeling}
-Git is a vision control system, which is designed for general open source software development. It provides a platform for different kinds of software including Linux kernel, wireless driver, Web browser, etc. However, for some specific applications.
+Today’s cloud interfaces are convenient for launching multiple independent instances of traditional single-node services, but writing truly distributed software remains a significant challenge. Distributed applications still require a developer to orchestrate concurrent computation and communication across machines, in a manner that is robust to delays and failures. Writing and debugging such code is difficult even for experienced infrastructure programmers, and drives away many creative software designers who might otherwise have innovative uses for cloud computing platforms \cite{Alvaro:2010:BAE:1755913.1755937}.
 
-\begin{enumerate}
-  \item individuals
-  \item groups
-  \item organizations
-\end{enumerate}
+A cloud programming system should include the editing, debugging, testing, running procedures. In the lower layer, it can record the state of debugging, which means the editing (say vi, Emacs) and debugging (say GDB, Code::Blocks) tools should be connected to the vision control system (say Git). In the upper layer, it should provide feedback information, which indicates it can make adaption according to the state of developers (say commits, code) and end users' requirements (say QoS, traffic loads).
+
+\subsection{Cloud Debugging}
+Git is more likely a vision control system, which is not connected to the programming and debugging process directly. The vision control function actually provides backup for the code editing: developers write code lines by vi or Emacs, then update the overall code by Git, in which the changes can be recorded for software evaluation and reversion. In the same way, it can also track the debugging process: the system records the differences after the debugging, especially when the bugs first appear and when they are solved. This can be helpful for both the debugging ability of every individual developers and the maintaining and bug tracking of the overall open source project:
 
 \begin{enumerate}
-  \item operate systems
-  \item web
-  \item application
-  \item network
+  \item Remind developers about the bugs they had made, which are usually issued by memory. It can also collect the bugs statistics which can provide advice about the debugging issues.
+  \item Maintain the bug differences between contributors, which can improve the performance of bug tracking system of the open source project.
+  \item The bug patterns can be classified based on the collected statistics, which can help to find potential problems and promote the software evaluation.
 \end{enumerate}
 
-\begin{enumerate}
-  \item contribute:
-  \item process: stable, scalable
-  \item acquire: software, individuals, groups
-\end{enumerate}
+\subsection{Process Modeling}
+Git is a vision control system, which is designed for general open source software development. It provides a platform for different kinds of software. However, it should be specially designed for some specific applications. Most repositories on Github are related to web applications, e.g. html5-boilerplate, rails, bootstrap, etc; or written in high-level languages e.g. JavaScript, Ruby, etc. On the other hand, other projects mainly focus on operating system or debugging environment, e.g. Linux kernel, Eclipse, etc; or written in low-level languages, e.g. C, C++, Java, etc. It means that the programming languages, cooperation mechanisms and target end users of different projects are highly heterogeneous. If the communication patterns, contribution levels, evaluation speed and user needs are classified and modeled, it can help to improve the efficiency according to the specify requirements and characters of the open source software development.
+%
+%\begin{enumerate}
+%  \item communication: software, individuals, groups
+%  \item process: stable, scalable
+%  \item application: operating systems, web applications, device drivers
+%  \item language: C, C++, Java, JavaScript, Ruby
+%  \item developer: individuals, groups, organizations, hackers
+%\end{enumerate}
 
-\begin{enumerate}
-  \item Connect the debug to Git
-  \item Teaching system
-  \item Cloud programming, computing, networking
-\end{enumerate}
+\subsection{Programming, Computing and Networking}
 
-\url{http://www.codeproject.com/Articles/250543/Cloud-Programming-Concepts}
+The open source software development platform is self-organized, and the participating and contributing are usually motivated by the developers' own interest. Some are interested in the software engineering, while others may focus on wireless networking. So many problems are solved from certain perspectives but not the same case from another aspect. For example, the weighted sequence of \{1/2,1/4,1/8,1/16\} is more effective than \{1/3,1/6,1/9,1/12\} in exponentially weighted moving average. A cloud programming system should provide a platform for the communication and cooperation of programming, computing and networking in system level.
 
-\href{http://www.ted.com/talks/aaron_koblin.html}{Aaron Koblin: Artfully visualizing our humanity}
+%\url{http://www.codeproject.com/Articles/250543/Cloud-Programming-Concepts}
+%
+%\href{http://www.ted.com/talks/aaron_koblin.html}{Aaron Koblin: Artfully visualizing our humanity}
+%
+%\href{http://www.mpt.net.nz/2012/06/why-free-software-has-poor-usability/}{Why free software has poor usability, and how to improve it}
 
-\href{http://www.mpt.net.nz/2012/06/why-free-software-has-poor-usability/}{Why free software has poor usability, and how to improve it}
-
-\nocite{Bonaccorsi20031243}
+%\nocite{Bonaccorsi20031243}
 \nocite{chacon2009pro}
-\nocite{Hertel20031159}
+%\nocite{Hertel20031159}
 \nocite{kernighan1999practice}
-\nocite{Kogut01062001}
+%\nocite{Kogut01062001}
 \nocite{scacchi2006understanding}
 \nocite{vonKrogh20031149}
 \nocite{Yilmaz06techniquesand}
 
-\nocite{Alvaro:2010:BAE:1755913.1755937}
 
 \renewcommand\refname{References}
 \bibliographystyle{abbrv}

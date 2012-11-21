@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.19)  20 NOV 2012 21:37
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.19)  21 NOV 2012 15:05
 entering extended mode
 **opensource.tex
 (D:\Cloud\Github\rp_opensource\opensource\opensource.tex
@@ -412,7 +412,7 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
  [7]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 175.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 174.
 
 
 ("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd"
@@ -435,41 +435,46 @@ Missing character: There is no ô in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
-
-[10]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
- [11] (D:\Cloud\Github\rp_opensource\opensource\opensource.bbl
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ê in font ptmr7t!
+
+[10] [11]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 303.
+
+ ("C:\Program Files (x86)\CTEX\MiKTeX\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 332.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 303.
+
+(D:\Cloud\Github\rp_opensource\opensource\opensource.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 327.
  [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 332.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 327.
 
 (D:\Cloud\Github\rp_opensource\opensource\opensource.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 332.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 332.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 327.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 327.
  ) 
 Here is how much of TeX's memory you used:
- 8494 strings out of 495354
- 130889 string characters out of 3182738
- 214263 words of memory out of 3000000
- 11487 multiletter control sequences out of 15000+200000
+ 8501 strings out of 495354
+ 131101 string characters out of 3182738
+ 214192 words of memory out of 3000000
+ 11501 multiletter control sequences out of 15000+200000
  39116 words of font info for 80 fonts, out of 3000000 for 9000
  17 hyphenation exceptions out of 8191
- 36i,6n,38p,953b,494s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,6n,38p,975b,494s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/Progr
-am Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program
- Files (x86)/CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (
-x86)/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/CTEX/
-MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/CTEX/MiKTeX/fon
-ts/type1/urw/times/utmri8a.pfb>
-Output written on opensource.pdf (12 pages, 110547 bytes).
+am Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progra
+m Files (x86)/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program 
+Files (x86)/CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x
+86)/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/CTEX/M
+iKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/CTEX/MiKTeX/font
+s/type1/urw/times/utmri8a.pfb>
+Output written on opensource.pdf (12 pages, 118420 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 218 PDF objects out of 1000 (max. 8388607)
+ 82 named destinations out of 1000 (max. 500000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

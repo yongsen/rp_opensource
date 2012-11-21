@@ -16,21 +16,10 @@ S.~Chacon, J.~Hamano, and S.~Pearce.
 \newblock {\em Pro Git}, volume 288.
 \newblock Apress, 2009.
 
-\bibitem{Hertel20031159}
-G.~Hertel, S.~Niedner, and S.~Herrmann.
-\newblock Motivation of software developers in open source projects: an
-  internet-based survey of contributors to the linux kernel.
-\newblock {\em Research Policy}, 32(7):1159 -- 1177, 2003.
-
 \bibitem{kernighan1999practice}
 B.~Kernighan and R.~Pike.
 \newblock {\em The practice of programming}.
 \newblock Addison-Wesley Professional, 1999.
-
-\bibitem{Kogut01062001}
-B.~Kogut and A.~Metiu.
-\newblock Open‐source software development and distributed innovation.
-\newblock {\em Oxford Review of Economic Policy}, 17(2):248--264, 2001.
 
 \bibitem{scacchi2006understanding}
 W.~Scacchi, J.~Feller, B.~Fitzgerald, S.~Hissam, and K.~Lakhani.
